@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
+
+# Downloaded content (keep structure but ignore large downloads)
+# Uncomment the line below if you want to ignore downloaded images:
+# images/*.jpg
+# images/*.png
+# images/*.gif
+# images/*.webp
+
+# Keep the .gitkeep file
+!images/.gitkeep
