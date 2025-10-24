@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Article converted from note.com">
+    <title>Converted Article from note.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        
+        h1 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+            color: #1a1a1a;
+            line-height: 1.4;
+        }
+        
+        h2 {
+            font-size: 1.5em;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            color: #2a2a2a;
+        }
+        
+        h3 {
+            font-size: 1.25em;
+            margin-top: 1.2em;
+            margin-bottom: 0.5em;
+            color: #3a3a3a;
+        }
+        
+        p {
+            margin-bottom: 1.2em;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5em auto;
+            border-radius: 4px;
+        }
+        
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        blockquote {
+            border-left: 4px solid #ddd;
+            padding-left: 1em;
+            margin: 1.5em 0;
+            color: #666;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: Consolas, Monaco, 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        pre {
+            background: #f4f4f4;
+            padding: 1em;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+        }
+        
+        ul, ol {
+            margin-left: 2em;
+            margin-bottom: 1.2em;
+        }
+        
+        li {
+            margin-bottom: 0.5em;
+        }
+        
+        .notice {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 1em;
+            border-radius: 4px;
+            margin: 2em 0;
+        }
+        
+        .source-info {
+            margin-top: 2em;
+            padding-top: 1em;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Article from note.com (Placeholder)</h1>
+        
+        <div class="notice">
+            <strong>⚠ Notice:</strong> This is a placeholder HTML file. The actual content from 
+            <a href="https://note.com/handshuffling/n/n83bbad08cbbd" target="_blank">https://note.com/handshuffling/n/n83bbad08cbbd</a> 
+            could not be fetched due to network restrictions in the build environment.
+            <br><br>
+            To convert the actual article, please run the <code>fetch_and_convert.py</code> script 
+            in an environment with internet access.
+        </div>
+        
+        <article>
+            <h2>How to Use This Conversion Tool</h2>
+            
+            <p>This repository contains a Python script that can fetch and convert note.com articles to standalone HTML files with all images downloaded locally.</p>
+            
+            <h3>Prerequisites</h3>
+            <ul>
+                <li>Python 3.6 or higher</li>
+                <li>Required packages: <code>requests</code>, <code>beautifulsoup4</code></li>
+            </ul>
+            
+            <h3>Installation</h3>
+            <pre><code>pip install requests beautifulsoup4</code></pre>
+            
+            <h3>Usage</h3>
+            <pre><code>python3 fetch_and_convert.py</code></pre>
+            
+            <p>The script will:</p>
+            <ol>
+                <li>Fetch the article from the specified URL</li>
+                <li>Extract the title, content, and metadata</li>
+                <li>Download all images to the <code>images/</code> folder</li>
+                <li>Create a standalone <code>article.html</code> file with proper styling</li>
+            </ol>
+            
+            <h3>Output Structure</h3>
+            <pre><code>preFire/
+├── article.html          # The converted HTML file
+├── images/               # Folder containing downloaded images
+│   ├── image_001.jpg
+│   ├── image_002.png
+│   └── ...
+├── fetch_and_convert.py  # The conversion script
+└── README.md            # Documentation</code></pre>
+            
+            <h3>Features</h3>
+            <ul>
+                <li>Clean, responsive design that works on all devices</li>
+                <li>All images downloaded and stored locally</li>
+                <li>Preserves article structure and formatting</li>
+                <li>No external dependencies in the final HTML</li>
+                <li>Mobile-friendly responsive layout</li>
+            </ul>
+        </article>
+        
+        <div class="source-info">
+            <p>Original source: <a href="https://note.com/handshuffling/n/n83bbad08cbbd" target="_blank">https://note.com/handshuffling/n/n83bbad08cbbd</a></p>
+            <p>Template created: 2025-10-24</p>
+        </div>
+    </div>
+</body>
+</html>
