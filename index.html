@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreFIRE - A Community-Built Magic Format</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            color: #d32f2f;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 0.2em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 2em;
+            font-size: 1.1em;
+        }
+        
+        h2 {
+            color: #1976d2;
+            border-bottom: 2px solid #e3f2fd;
+            padding-bottom: 5px;
+            margin-top: 2em;
+        }
+        
+        .intro {
+            font-size: 1.1em;
+            background: #f5f5f5;
+            padding: 25px;
+            border-left: 4px solid #d32f2f;
+            margin: 2em 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .pillar {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            color: #1976d2;
+        }
+        
+        .banlist, .watchlist {
+            background: #fff3e0;
+            border: 1px solid #ffcc02;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .banned-cards, .watch-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .card {
+            background: #ff5722;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        
+        .watch-card {
+            background: #ff9800;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        
+        .links {
+            background: #e8f5e8;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .links a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .links a:hover {
+            text-decoration: underline;
+        }
+        
+        .deck-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .category {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .category h4 {
+            color: #1976d2;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .category ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .category li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PreFIRE</h1>
+        <p class="subtitle">A Community-Built Magic: The Gathering Format</p>
+        
+        <div class="intro">
+            <p>For years, Modern players have dreamed of a format that captures the best of Magic's golden era without the chaos of constant power creep. A safe haven where decks like Twin, Pod, Jund, and Affinity can face each other again in a true test of skill and strategy.</p>
+            
+            <p><strong>It is no longer a dream.</strong></p>
+            
+            <p>Created by Francisco Pawluszek, known online as fpawlusz, PreFIRE is a community-built custom format heavily inspired by Premodern.</p>
+        </div>
+        
+        <h2>What is PreFIRE?</h2>
+        <p>PreFIRE preserves the spirit of Modern before the FIRE design philosophy, while incorporating a few key innovations.</p>
+        
+        <p>Much like its predecessor, Premodern, PreFIRE's banlist has been refined through active playtesting and community collaboration. Each decision is made for the sake of gameplay and supported by community consensus.</p>
+        
+        <p>The format gathers all the iconic Modern decks: Twin, Pod, Jund, Affinity, and many more, into one timeless sandbox.</p>
+        
+        <p>It's a refuge for classic cards like Tarmogoyf or Cryptic Command that were once format-defining but are now unplayable anywhere else.</p>
+        
+        <p>Cards that undermine gameplay are banned, while forgotten favourites are unbanned to restore balance and creativity. Some remain on a watchlist to encourage experimentation within the metagame.</p>
+        
+        <p>The result is a "what-if" version of Modern where cards that were never legal together can finally be tested side by side. Builders can explore new synergies within a fixed card pool, without worrying about set releases or rotation.</p>
+        
+        <p>PreFIRE is proxy-friendly, allowing every version of legal cards so that anyone can play without financial hurdles.</p>
+        
+        <p>The format follows the contemporary rules of Magic for compatibility with MTGO, including the London Mulligan. New players from other formats can also adjust quickly as the rules remain the same.</p>
+        
+        <h2>The Pillars of PreFIRE</h2>
+        <p>These cards should always remain legal and powerful within PreFIRE:</p>
+        <div class="pillars">
+            <div class="pillar">Splinter Twin</div>
+            <div class="pillar">Birthing Pod</div>
+            <div class="pillar">Faithless Looting</div>
+            <div class="pillar">Mox Opal</div>
+            <div class="pillar">Tarmogoyf</div>
+            <div class="pillar">Noble Hierarch</div>
+        </div>
+        
+        <h2>Banlist</h2>
+        <div class="banlist">
+            <p><strong>Banned Cards:</strong></p>
+            <div class="banned-cards">
+                <span class="card">All 5 Artifact Lands</span>
+                <span class="card">Blazing Shoal</span>
+                <span class="card">Chrome Mox</span>
+                <span class="card">Cloudpost</span>
+                <span class="card">Counterbalance</span>
+                <span class="card">Dark Depths</span>
+                <span class="card">Deathrite Shaman</span>
+                <span class="card">Dig Through Time</span>
+                <span class="card">Eye of Ugin</span>
+                <span class="card">Gitaxian Probe</span>
+                <span class="card">Golgari Grave-Troll</span>
+                <span class="card">Hypergenesis</span>
+                <span class="card">Krark-Clan Ironworks</span>
+                <span class="card">Mental Misstep</span>
+                <span class="card">Ponder</span>
+                <span class="card">Rite of Flame</span>
+                <span class="card">Second Sunrise</span>
+                <span class="card">Skullclamp</span>
+                <span class="card">Summer Bloom</span>
+                <span class="card">Treasure Cruise</span>
+                <span class="card">Umezawa's Jitte</span>
+            </div>
+        </div>
+        
+        <h2>Watchlist</h2>
+        <div class="watchlist">
+            <p><strong>Cards Under Testing:</strong></p>
+            <div class="watch-cards">
+                <span class="watch-card">Creeping Chill</span>
+                <span class="watch-card">Dread Return</span>
+                <span class="watch-card">Glimpse of Nature</span>
+                <span class="watch-card">Green Sun's Zenith</span>
+                <span class="watch-card">Preordain</span>
+                <span class="watch-card">Punishing Fire</span>
+                <span class="watch-card">Seething Song</span>
+                <span class="watch-card">Sensei's Divining Top</span>
+                <span class="watch-card">Simian Spirit Guide</span>
+                <span class="watch-card">Thopter Foundry/Sword of the Meek</span>
+            </div>
+        </div>
+        
+        <h2>Deck Archetypes</h2>
+        <div class="deck-categories">
+            <div class="category">
+                <h4>Aggro</h4>
+                <ul>
+                    <li>Affinity</li>
+                    <li>Burn</li>
+                    <li>Humans</li>
+                    <li>Zoo</li>
+                    <li>Infect</li>
+                    <li>Dredge</li>
+                    <li>Elves</li>
+                </ul>
+            </div>
+            <div class="category">
+                <h4>Control</h4>
+                <ul>
+                    <li>UW Control</li>
+                    <li>Jeskai Control</li>
+                    <li>Blue Moon</li>
+                    <li>Grixis Control</li>
+                </ul>
+            </div>
+            <div class="category">
+                <h4>Combo</h4>
+                <ul>
+                    <li>Splinter Twin</li>
+                    <li>Storm</li>
+                    <li>Ad Nauseam</li>
+                    <li>Living End</li>
+                    <li>Birthing Pod</li>
+                    <li>Amulet Titan</li>
+                </ul>
+            </div>
+            <div class="category">
+                <h4>Midrange</h4>
+                <ul>
+                    <li>Jund</li>
+                    <li>Stoneblade</li>
+                    <li>Mardu Pyro</li>
+                    <li>Death & Taxes</li>
+                    <li>The Rock</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>The Spark</h2>
+        <p>Every format starts with a reason to exist. PreFIRE was born from frustration, nostalgia, and the simple wish for a format that prioritizes players over business incentives.</p>
+        
+        <p>PreFIRE's gameplay feels refreshingly interactive. You are rarely just watching your opponent take over uncontested turns. There is constant back and forth, and games last long enough for both players to interact meaningfully.</p>
+        
+        <p>The field feels wide, and many decks can compete. Even the ones considered weaker have a real shot at winning, because the pilot is able to make smart decisions that meaningfully affect the result of the game.</p>
+        
+        <div class="links">
+            <h2>Get Started</h2>
+            <ul>
+                <li><a href="https://docs.google.com/document/d/1VM6YZcq32PAgaE3__3RQWEWUNNN2JihsY9fw3hi0Zk8/edit" target="_blank">Official PreFIRE Format Document</a></li>
+                <li><a href="https://badaro.github.io/validator/" target="_blank">PreFIRE Deck Validator</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/1XdWlFN6867u0tuuu1Vt_EeJPz-FUulDFQnLoVmdphSw/edit" target="_blank">Sample Decklists</a></li>
+                <li><a href="https://discord.gg/gbTwua4u4m" target="_blank">Join the PreFIRE Discord</a></li>
+                <li><a href="https://mtgprint.net/" target="_blank">MTG Print (Proxy Tool)</a></li>
+                <li><a href="https://www.tcdecks.net/format.php?format=Prefire" target="_blank">Tournament Results</a></li>
+            </ul>
+            
+            <p><strong>Format Creator:</strong> Francisco Pawluszek (<a href="https://x.com/fpawluszmtg" target="_blank">@fpawluszmtg</a>)</p>
+            <p><strong>Card Pool:</strong> 8th Edition through War of the Spark (No Modern Horizons sets)</p>
+            <p><strong>Proxy Policy:</strong> Fully proxy-friendly format</p>
+        </div>
+    </div>
+</body>
+</html>
