@@ -1,0 +1,30 @@
+4 Arclight Phoenix
+2 Crackling Drake
+4 Faithless Looting
+3 Island
+2 Lightning Axe
+4 Lightning Bolt
+4 Manamorphose
+2 Mountain
+4 Opt
+2 Polluted Delta
+4 Preordain
+2 Pyromancer Ascension
+4 Scalding Tarn
+2 Spell Pierce
+4 Spirebluff Canal
+3 Steam Vents
+2 Surgical Extraction
+4 Thing in the Ice
+4 Thought Scour
+
+SIDEBOARD:
+2 Abrade
+2 Blood Moon
+2 Ceremonious Rejection
+2 Dismember
+2 Dispel
+1 Echoing Truth
+1 Pyroclasm
+2 Ravenous Trap
+1 Shatterstorm

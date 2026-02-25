@@ -1,0 +1,13 @@
+export const events = [
+  {
+    "Name": "TestEvent1",
+    "Link": "https://discord.com/events/12345678901234567890",
+    "Info": "Please don't bring poison holy shit I haaaate that deck",
+    "Time": "28 December 2025 14:00 UTC"
+  },
+  {
+    "Name": "TestEvent2",
+    "Link": "https://discord.com/events/12345678901234567890",
+    "Time": "28 July 2003 14:00 UTC"
+  }
+]

@@ -1,256 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PreFIRE - A Community-Built Magic Format</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header class="topbar">
-        <a href="#top" class="brand">PreFIRE</a>
-        <div class="topbar-actions">
-            <nav class="nav" aria-label="Main navigation">
-                <a href="#about" data-i18n="nav.about">About</a>
-                <a href="#pillars" data-i18n="nav.pillars">Pillars</a>
-                <a href="#banlist" data-i18n="nav.banlist">Banlist</a>
-                <a href="#watchlist" data-i18n="nav.watchlist">Watchlist</a>
-                <a href="#decks" data-i18n="nav.decks">Decks</a>
-                <a href="#resources" data-i18n="nav.resources">Resources</a>
-                <a href="#contribute" data-i18n="nav.contribute">Contribute</a>
-            </nav>
-            <div class="lang-switch">
-                <label for="language-select" class="visually-hidden" data-i18n="lang.label">Language</label>
-                <select id="language-select" aria-label="Language">
-                    <option value="en">English</option>
-                    <option value="pt">Português</option>
-                </select>
-            </div>
-        </div>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./RESOURCES/style/style.css">
+    <title>PreFIRE Modern</title>
+
+    <!-- Favicons -->
+    <link rel="manifest"                              href="./RESOURCES/favicon/site.webmanifest">
+    <link rel="shortcut icon"                         href="./RESOURCES/favicon/favicon.ico">
+    <link rel="apple-touch-icon"      sizes="180x180" href="./RESOURCES/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"   href="./RESOURCES/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"   href="./RESOURCES/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./RESOURCES/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./RESOURCES/favicon/android-chrome-512x512.png">
+    <!-- Theme Colors -->
+    <meta name="theme-color"             content="#e75f5f">
+    <meta name="msapplication-TileColor" content="#e75f5f">
+    
+    <meta name='viewport'           content='width=device-width, initial-scale=1'/>
+    <meta name="description"        content="preFIREmagic.com">
+    <meta name="keywords"           content="MTG, mtg, modern, FIRE, wizards, Splinter Twin, Tarmogoyf, Faithless Looting, Birthing Pod, Mox Opal">
+    <meta property="og:title"       content="Pre-FIRE Magic">
+    <meta property="og:description" content="A fixed MTG format, born to channel the gameplay and aesthetics of this specific point in the history of Magic: the Gathering.">
+    <meta property="og:image:alt"   content="Splinter Twin">
+    <!-- <meta property="og:image"       content="https:/preFIREmagic.com/RESOURCES/img/logo.webp"> -->
+    <style>
+      :root{--page-color:var(--col-white);}
+      #DiscordImage  { width: 30%; margin-inline: 35%; }
+      @media only screen and (max-width:1000px) {
+        #DiscordImage{ width: 80%; margin-inline: 10%;}
+      }
+      #main-copy{
+        position: relative;
+        background-image    : url(RESOURCES/img/backgrounds/tarmogoyf.webp); 
+        background-size     : cover; 
+        background-position : center;
+        overflow: hidden;
+        & span, & h2{z-index: 2; position: relative;}
+      }
+      #main-copy::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(to right, var(--col-dark-1-transparent), #00000077);
+        opacity: 1;
+        transition: opacity 1.2s ease;
+        pointer-events: none;
+        z-index: 1;
+      }
+    </style>
+    <script defer src="RESOURCES/script/index.js" type="module"></script>
+  </head>
+
+
+
+  <body class="background_splinter_twin">
+    <header>
+      <h1>PreFIRE</h1>
     </header>
+    <main>
 
-    <div class="page">
-        <section class="hero" id="top">
-            <div>
-                <h1>PreFIRE</h1>
-                <p class="subtitle" data-i18n="hero.subtitle">A Community-Built Magic: The Gathering Format</p>
-            </div>
-            <aside class="hero-note" aria-label="Source credit">
-                <p data-i18n-html="hero.credit">Based on the comprehensive article by <strong>handshuffling</strong><br>
-                📖 <a href="https://note.com/handshuffling/n/n83bbad08cbbd" target="_blank">Read the full article here</a></p>
-            </aside>
-        </section>
+      <section id="hero-banner"></section>
 
-        <main>
-            <section class="span-12 intro">
-                <p data-i18n="intro.p1">For years, Modern players have dreamed of a format that captures the best of Magic's golden era without the chaos of constant power creep. A safe haven where decks like Twin, Pod, Jund, and Affinity can face each other again in a true test of skill and strategy.</p>
-                <p data-i18n-html="intro.p2"><strong>It is no longer a dream.</strong></p>
-                <p data-i18n="intro.p3">Created by Francisco Pawluszek, known online as fpawlusz, PreFIRE is a community-built custom format heavily inspired by Premodern.</p>
-            </section>
+      <section id="main-copy">
+          <h2 style="text-align: center;">PreFIRE Modern</h2>
+          <span>
+            <p style="text-align:center;">Are you a Modern player who misses a time <strong>before Horizons</strong> set power creep, breakneck release schedules, and Universes Beyond?
+            <br>
+            <br>Do you yearn to summon a huge <strong>Tarmogoyf</strong>, combo kill with Pod and <strong>Splinter Twin</strong>, or swarm the field with artifact creatures?
+            </p>
+            <h3 style="text-align:center; background:transparent; color:var(--col-red)">It’s time to reignite your love for Modern.</h3>
+            <p style="text-align: center;">Introducing <strong>PreFIRE</strong> - A community-built retro format created by Francisco Pawluszek.</p>
+            <a href="https://discord.gg/P7bV8ttzgT" target="_blank" style="text-align:center;"><button style="width:50%; margin-inline: 25%;">Start Playing Now</button></a>
+          </span>
+      </section>
 
-            <section class="span-8" id="about">
-                <h2 data-i18n="about.title">What is PreFIRE?</h2>
-                <p data-i18n="about.p1">PreFIRE preserves the spirit of Modern before the FIRE design philosophy, while incorporating a few key innovations.</p>
-                <p data-i18n="about.p2">Much like its predecessor, Premodern, PreFIRE's banlist has been refined through active playtesting and community collaboration. Each decision is made for the sake of gameplay and supported by community consensus.</p>
-                <p data-i18n="about.p3">The format gathers all the iconic Modern decks: Twin, Pod, Jund, Affinity, and many more, into one timeless sandbox.</p>
-                <p data-i18n="about.p4">It's a refuge for classic cards like Tarmogoyf or Cryptic Command that were once format-defining but are now unplayable anywhere else.</p>
-                <p data-i18n="about.p5">Cards that undermine gameplay are banned, while forgotten favourites are unbanned to restore balance and creativity. Some remain on a watchlist to encourage experimentation within the metagame.</p>
-                <p data-i18n="about.p6">The result is a "what-if" version of Modern where cards that were never legal together can finally be tested side by side. Builders can explore new synergies within a fixed card pool, without worrying about set releases or rotation.</p>
-                <p data-i18n="about.p7">PreFIRE is proxy-friendly, allowing every version of legal cards so that anyone can play without financial hurdles.</p>
-                <p data-i18n="about.p8">The format follows the contemporary rules of Magic for compatibility with MTGO, including the London Mulligan. New players from other formats can also adjust quickly as the rules remain the same.</p>
-            </section>
 
-            <section class="span-4" id="pillars">
-                <h2 data-i18n="pillars.title">The Pillars of PreFIRE</h2>
-                <p data-i18n="pillars.subtitle">These cards should always remain legal and powerful within PreFIRE:</p>
-                <div class="pillars">
-                    <button class="pillar ui-lift active" type="button" data-card-name="Splinter Twin"><span class="button_top">Splinter Twin</span></button>
-                    <button class="pillar ui-lift" type="button" data-card-name="Birthing Pod"><span class="button_top">Birthing Pod</span></button>
-                    <button class="pillar ui-lift" type="button" data-card-name="Faithless Looting"><span class="button_top">Faithless Looting</span></button>
-                    <button class="pillar ui-lift" type="button" data-card-name="Mox Opal"><span class="button_top">Mox Opal</span></button>
-                    <button class="pillar ui-lift" type="button" data-card-name="Tarmogoyf"><span class="button_top">Tarmogoyf</span></button>
-                    <button class="pillar ui-lift" type="button" data-card-name="Noble Hierarch"><span class="button_top">Noble Hierarch</span></button>
-                </div>
-                <div class="pillar-viewer">
-                    <p class="pillar-viewer-title">Selected Pillar Card</p>
-                    <a id="pillar-card-link" href="https://scryfall.com/search?q=%21%22Splinter+Twin%22" target="_blank" rel="noopener noreferrer">
-                        <img id="pillar-card-image" alt="Splinter Twin" loading="lazy">
-                    </a>
-                    <p id="pillar-card-meta" class="pillar-viewer-meta">Loading first printing...</p>
-                </div>
-            </section>
+      <section>
+        <h2>The Pillars of PreFIRE</h2>
+        <p>To ensure PreFIRE maintains its identity as a nostalgic format, cards and strategies iconic to classic Modern will take priority when making banlist decisions. </p>
+        <div class="enforcedGrid card-container" id="image-container-pillars">
+        </div>
+        <p style="text-align:center">These cornerstone cards will always remain legal, even if the decks they feature in must be weakened to maintain format balance. 
+        <br>Bans will always target cards surrounding these pillars — never the pillars themselves.
+        <br>This list is by no means exhaustive or fixed and may change as the format develops.
+        </p>
+      </section>
 
-            <section class="span-7 ban" id="banlist">
-                <h2 data-i18n="banlist.title">Banlist</h2>
-                <p data-i18n-html="banlist.subtitle"><strong>Banned Cards:</strong></p>
-                <div class="chip-wrap">
-                    <span class="chip chip-ban ui-lift"><a class="button_top" data-i18n="banlist.allArtifactLands" href="https://scryfall.com/search?q=t%3Aland+is%3Aartifact+f%3Amodern+-name%3A%22Darksteel+Citadel%22" target="_blank" rel="noopener noreferrer">All 5 Artifact Lands</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Blazing+Shoal%22" target="_blank" rel="noopener noreferrer">Blazing Shoal</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Chrome+Mox%22" target="_blank" rel="noopener noreferrer">Chrome Mox</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Cloudpost%22" target="_blank" rel="noopener noreferrer">Cloudpost</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Creeping+Chill%22" target="_blank" rel="noopener noreferrer">Creeping Chill</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Counterbalance%22" target="_blank" rel="noopener noreferrer">Counterbalance</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Dark+Depths%22" target="_blank" rel="noopener noreferrer">Dark Depths</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Deathrite+Shaman%22" target="_blank" rel="noopener noreferrer">Deathrite Shaman</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Dig+Through+Time%22" target="_blank" rel="noopener noreferrer">Dig Through Time</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Eye+of+Ugin%22" target="_blank" rel="noopener noreferrer">Eye of Ugin</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Gitaxian+Probe%22" target="_blank" rel="noopener noreferrer">Gitaxian Probe</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Golgari+Grave-Troll%22" target="_blank" rel="noopener noreferrer">Golgari Grave-Troll</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Hypergenesis%22" target="_blank" rel="noopener noreferrer">Hypergenesis</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Krark-Clan+Ironworks%22" target="_blank" rel="noopener noreferrer">Krark-Clan Ironworks</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Mental+Misstep%22" target="_blank" rel="noopener noreferrer">Mental Misstep</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Ponder%22" target="_blank" rel="noopener noreferrer">Ponder</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Rite+of+Flame%22" target="_blank" rel="noopener noreferrer">Rite of Flame</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Second+Sunrise%22" target="_blank" rel="noopener noreferrer">Second Sunrise</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Skullclamp%22" target="_blank" rel="noopener noreferrer">Skullclamp</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Summer+Bloom%22" target="_blank" rel="noopener noreferrer">Summer Bloom</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Treasure+Cruise%22" target="_blank" rel="noopener noreferrer">Treasure Cruise</a></span>
-                    <span class="chip chip-ban ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Umezawa%27s+Jitte%22" target="_blank" rel="noopener noreferrer">Umezawa's Jitte</a></span>
-                </div>
-            </section>
 
-            <section class="span-5 watch" id="watchlist">
-                <h2 data-i18n="watchlist.title">Watchlist</h2>
-                <p data-i18n-html="watchlist.subtitle"><strong>Cards Under Testing:</strong></p>
-                <div class="chip-wrap">
-                    <span class="chip chip-watch ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Dread+Return%22" target="_blank" rel="noopener noreferrer">Dread Return</a></span>
-                    <span class="chip chip-watch ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Glimpse+of+Nature%22" target="_blank" rel="noopener noreferrer">Glimpse of Nature</a></span>
-                    <span class="chip chip-watch ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Green+Sun%27s+Zenith%22" target="_blank" rel="noopener noreferrer">Green Sun's Zenith</a></span>
-                    <span class="chip chip-watch ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Preordain%22" target="_blank" rel="noopener noreferrer">Preordain</a></span>
-                    <span class="chip chip-watch ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Punishing+Fire%22" target="_blank" rel="noopener noreferrer">Punishing Fire</a></span>
-                    <span class="chip chip-watch ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Seething+Song%22" target="_blank" rel="noopener noreferrer">Seething Song</a></span>
-                    <span class="chip chip-watch ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Sensei%27s+Divining+Top%22" target="_blank" rel="noopener noreferrer">Sensei's Divining Top</a></span>
-                    <span class="chip chip-watch ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Simian+Spirit+Guide%22" target="_blank" rel="noopener noreferrer">Simian Spirit Guide</a></span>
-                    <span class="chip chip-watch ui-lift"><a class="button_top" href="https://scryfall.com/search?q=%21%22Thopter+Foundry%22+or+%21%22Sword+of+the+Meek%22" target="_blank" rel="noopener noreferrer">Thopter Foundry/Sword of the Meek</a></span>
-                </div>
-            </section>
+      <section>
+        <h2>What is PreFIRE?</h2>
+        <p>PreFIRE is a fixed Magic: The Gathering format born to channel the gameplay and aesthetics of Modern Format Magic from its inception up to 2019 — right before the release of War of the Spark. This cutoff avoids the intense power creep introduced by FIRE philosophy and Modern Horizons sets.
+        <br>But PreFIRE goes beyond simply returning to old Modern.
+        <br>
+        <br>With the advantage of hindsight, PreFIRE features a custom banlist designed to enhance gameplay and broaden deckbuilding freedom.
+        <br>Cards like Splinter Twin, Jace the Mind Sculptor, and Stoneforge Mystic have been unleashed and allowed to exist alongside decks like Grixis Death’s Shadow, resulting in new play patterns and unprecedented game experiences.
+        <br>
+        <br>Being a fixed format, PreFIRE doesn’t need to worry about certain cards like Mox Opal or Birthing Pod spiraling out of control as more powerful cards get released, allowing these nostalgic gems to thrive in a regulated environment.
+        <br>What’s more, problem cards that stifle deck diversity or lead to undesirable play patterns like Gitaxian Probe are banned, leading to more interactive and fun games overall.
+        <br>
+        <br>These banlist decisions are constantly being evaluated as the metagame takes shape, so rest assured that player enjoyment is always a priority!
+        </p>
+      </section>
 
-            <section class="span-12 decks" id="decks">
-                <h2 data-i18n="decks.title">Deck Archetypes</h2>
-                <div class="deck-grid">
-                    <article class="deck-card deck-aggro">
-                        <h4 data-i18n="decks.aggro">Aggro</h4>
-                        <ul class="deck-list">
-                            <li class="deck-name ui-lift"><span class="button_top">Affinity</span></li>
-                            <li class="deck-name ui-lift"><span class="button_top">Burn</span></li>
-                            <li class="deck-name ui-lift"><span class="button_top">Humans</span></li>
-                            <li class="deck-name ui-lift"><span class="button_top">Zoo</span></li>
-                            <li class="deck-name ui-lift"><span class="button_top">Infect</span></li>
-                            <li class="deck-name ui-lift"><span class="button_top">Dredge</span></li>
-                            <li class="deck-name ui-lift"><span class="button_top">Elves</span></li>
-                        </ul>
-                    </article>
-                    <article class="deck-card deck-control">
-                        <h4 data-i18n="decks.control">Control</h4>
-                        <ul class="deck-list">
-                            <li class="deck-name ui-lift"><span class="button_top">UW Control</span></li>
-                            <li class="deck-name ui-lift"><span class="button_top">Jeskai Control</span></li>
-                            <li class="deck-name ui-lift"><span class="button_top">Blue Moon</span></li>
-                            <li class="deck-name ui-lift"><span class="button_top">Grixis Control</span></li>
-                        </ul>
-                    </article>
-                    <article class="deck-card deck-combo">
-                        <h4 data-i18n="decks.combo">Combo</h4>
-                        <ul class="deck-list">
-                            <li class="deck-name ui-lift"><span class="button_top">Splinter Twin</span></li>
-                            <li class="deck-name ui-lift"><span class="button_top">Storm</span></li>
-                            <li class="deck-name ui-lift"><span class="button_top">Ad Nauseam</span></li>
-                            <li class="deck-name ui-lift"><span class="button_top">Living End</span></li>
-                            <li class="deck-name ui-lift"><span class="button_top">Birthing Pod</span></li>
-                            <li class="deck-name ui-lift"><span class="button_top">Amulet Titan</span></li>
-                        </ul>
-                    </article>
-                    <article class="deck-card deck-midrange">
-                        <h4 data-i18n="decks.midrange">Midrange</h4>
-                        <ul class="deck-list">
-                            <li class="deck-name ui-lift"><span class="button_top">Jund</span></li>
-                            <li class="deck-name ui-lift"><span class="button_top">Stoneblade</span></li>
-                            <li class="deck-name ui-lift"><span class="button_top">Mardu Pyro</span></li>
-                            <li class="deck-name ui-lift"><span class="button_top">Death &amp; Taxes</span></li>
-                            <li class="deck-name ui-lift"><span class="button_top">The Rock</span></li>
-                        </ul>
-                    </article>
-                </div>
-            </section>
 
-            <section class="span-6">
-                <h2 data-i18n="spark.title">The Spark</h2>
-                <p data-i18n="spark.p1">Every format starts with a reason to exist. PreFIRE was born from frustration, nostalgia, and the simple wish for a format that prioritizes players over business incentives.</p>
-                <p data-i18n="spark.p2">PreFIRE's gameplay feels refreshingly interactive. You are rarely just watching your opponent take over uncontested turns. There is constant back and forth, and games last long enough for both players to interact meaningfully.</p>
-                <p data-i18n="spark.p3">The field feels wide, and many decks can compete. Even the ones considered weaker have a real shot at winning, because the pilot is able to make smart decisions that meaningfully affect the result of the game.</p>
-            </section>
-
-            <section class="span-6 links" id="resources">
-                <h2 data-i18n="resources.title">Get Started</h2>
-                <ul>
-                    <li><a href="https://docs.google.com/document/d/1VM6YZcq32PAgaE3__3RQWEWUNNN2JihsY9fw3hi0Zk8/edit" target="_blank" data-i18n="resources.l1">Official PreFIRE Format Document</a></li>
-                    <li><a href="https://badaro.github.io/validator/" target="_blank" data-i18n="resources.l2">PreFIRE Deck Validator</a></li>
-                    <li><a href="https://docs.google.com/spreadsheets/d/1XdWlFN6867u0tuuu1Vt_EeJPz-FUulDFQnLoVmdphSw/edit" target="_blank" data-i18n="resources.l3">Sample Decklists</a></li>
-                    <li><a href="https://discord.gg/gbTwua4u4m" target="_blank" data-i18n="resources.l4">Join the PreFIRE Discord</a></li>
-                    <li><a href="https://mtgprint.net/" target="_blank" data-i18n="resources.l5">MTG Print (Proxy Tool)</a></li>
-                    <li><a href="https://www.tcdecks.net/format.php?format=Prefire" target="_blank" data-i18n="resources.l6">Tournament Results</a></li>
-                    <li><a href="#contribute" data-i18n="resources.l7">How to Contribute to PreFIRE</a></li>
-                </ul>
-                <p data-i18n-html="resources.meta1"><strong>Format Creator:</strong> Francisco Pawluszek (<a href="https://x.com/fpawluszmtg" target="_blank">@fpawluszmtg</a>)</p>
-                <p data-i18n-html="resources.meta2"><strong>Card Pool:</strong> 8th Edition through War of the Spark (No Modern Horizons sets)</p>
-                <p data-i18n-html="resources.meta3"><strong>Proxy Policy:</strong> Fully proxy-friendly format</p>
-            </section>
-
-            <section class="span-6 delta">
-                <h2 data-i18n="diff.title">Differences to 2015modern</h2>
-                <div class="delta-grid">
-                    <article class="delta-card delta-banned">
-                        <p class="delta-heading" data-i18n-html="diff.banned"><strong>Banned:</strong></p>
-                        <ul class="delta-list">
-                            <li><a href="https://scryfall.com/search?q=%21%22Counterbalance%22" target="_blank" rel="noopener noreferrer">Counterbalance</a></li>
-                            <li><a href="https://scryfall.com/search?q=%21%22Eye+of+Ugin%22" target="_blank" rel="noopener noreferrer">Eye of Ugin</a></li>
-                            <li><a href="https://scryfall.com/search?q=%21%22Gitaxian+Probe%22" target="_blank" rel="noopener noreferrer">Gitaxian Probe</a></li>
-                            <li><a href="https://scryfall.com/search?q=%21%22Golgari+Grave-Troll%22" target="_blank" rel="noopener noreferrer">Golgari Grave-Troll</a></li>
-                            <li><a href="https://scryfall.com/search?q=%21%22Krark-Clan+Ironworks%22" target="_blank" rel="noopener noreferrer">Krark-Clan Ironworks</a></li>
-                            <li><a href="https://scryfall.com/search?q=%21%22Summer+Bloom%22" target="_blank" rel="noopener noreferrer">Summer Bloom</a></li>
-                        </ul>
-                    </article>
-
-                    <article class="delta-card delta-unbanned">
-                        <p class="delta-heading" data-i18n-html="diff.unbanned"><strong>Unbanned:</strong></p>
-                        <ul class="delta-list">
-                            <li><a href="https://scryfall.com/search?q=%21%22Ancestral+Vision%22" target="_blank" rel="noopener noreferrer">Ancestral Vision</a></li>
-                            <li><a href="https://scryfall.com/search?q=%21%22Birthing+Pod%22" target="_blank" rel="noopener noreferrer">Birthing Pod</a></li>
-                            <li><a href="https://scryfall.com/search?q=%21%22Bloodbraid+Elf%22" target="_blank" rel="noopener noreferrer">Bloodbraid Elf</a></li>
-                            <li><a href="https://scryfall.com/search?q=%21%22Dread+Return%22" target="_blank" rel="noopener noreferrer">Dread Return</a></li>
-                            <li><a href="https://scryfall.com/search?q=%21%22Glimpse+of+Nature%22" target="_blank" rel="noopener noreferrer">Glimpse of Nature</a></li>
-                            <li><a href="https://scryfall.com/search?q=%21%22Green+Sun%27s+Zenith%22" target="_blank" rel="noopener noreferrer">Green Sun's Zenith</a></li>
-                            <li><a href="https://scryfall.com/search?q=%21%22Jace%2C+the+Mind+Sculptor%22" target="_blank" rel="noopener noreferrer">Jace, the Mind Sculptor</a></li>
-                            <li><a href="https://scryfall.com/search?q=%21%22Preordain%22" target="_blank" rel="noopener noreferrer">Preordain</a></li>
-                            <li><a href="https://scryfall.com/search?q=%21%22Punishing+Fire%22" target="_blank" rel="noopener noreferrer">Punishing Fire</a></li>
-                            <li><a href="https://scryfall.com/search?q=%21%22Seething+Song%22" target="_blank" rel="noopener noreferrer">Seething Song</a></li>
-                            <li><a href="https://scryfall.com/search?q=%21%22Sensei%27s+Divining+Top%22" target="_blank" rel="noopener noreferrer">Sensei's Divining Top</a></li>
-                            <li><a href="https://scryfall.com/search?q=%21%22Stoneforge+Mystic%22" target="_blank" rel="noopener noreferrer">Stoneforge Mystic</a></li>
-                            <li><a href="https://scryfall.com/search?q=%21%22Sword+of+the+Meek%22" target="_blank" rel="noopener noreferrer">Sword of the Meek</a></li>
-                        </ul>
-                    </article>
-                </div>
-            </section>
-
-            <section class="span-6 contribute" id="contribute">
-                <h2 data-i18n="contribute.title">How to Contribute</h2>
-                <p data-i18n="contribute.p1">PreFIRE is a community-driven format, and we welcome contributions from players who want to help improve and expand the format!</p>
-                <p data-i18n-html="contribute.p2"><strong>Ways to contribute:</strong></p>
-                <ul>
-                    <li data-i18n-html="contribute.li1"><strong>Content Updates:</strong> Improve this website, add new deck guides, or update format information</li>
-                    <li data-i18n-html="contribute.li2"><strong>Documentation:</strong> Help clarify rules, add FAQ sections, or translate content</li>
-                    <li data-i18n-html="contribute.li3"><strong>Resources:</strong> Contribute sample decklists, tournament reports, or strategy articles</li>
-                    <li data-i18n-html="contribute.li4"><strong>Bug Fixes:</strong> Report issues or fix problems with the website</li>
-                </ul>
-                <p data-i18n-html="contribute.p3"><strong>To contribute:</strong> Fork the repository at <a href="https://github.com/Thegg53/preFire" target="_blank">github.com/Thegg53/preFire</a>, make your changes, and submit a pull request. All contributions are reviewed by the community and format maintainers.</p>
-                <p class="muted" data-i18n="contribute.p4">Help us keep PreFIRE community-driven and player-focused!</p>
-            </section>
-        </main>
-    </div>
-    <script src="i18n.js"></script>
-    <script src="pillars.js"></script>
-</body>
+    </main>
+    <footer></footer>
+  </body>
 </html>

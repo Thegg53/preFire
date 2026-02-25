@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./RESOURCES/style/style.css">
+    <title>PreFIRE Decks</title>
+
+    <!-- Favicons -->
+    <link rel="manifest"                              href="./RESOURCES/favicon/site.webmanifest">
+    <link rel="shortcut icon"                         href="./RESOURCES/favicon/favicon.ico">
+    <link rel="apple-touch-icon"      sizes="180x180" href="./RESOURCES/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"   href="./RESOURCES/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"   href="./RESOURCES/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./RESOURCES/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./RESOURCES/favicon/android-chrome-512x512.png">
+    <!-- Theme Colors -->
+    <meta name="theme-color"             content="#e75f5f">
+    <meta name="msapplication-TileColor" content="#e75f5f">
+    
+    <meta name='viewport'           content='width=device-width, initial-scale=1'/>
+    <meta name="description"        content="preFIREmagic.com">
+    <meta name="keywords"           content="MTG, mtg, modern, FIRE, wizards, Splinter Twin, Tarmogoyf, Faithless Looting, Birthing Pod, Mox Opal">
+    <meta property="og:title"       content="Pre-FIRE Magic">
+    <meta property="og:description" content="A fixed MTG format, born to channel the gameplay and aesthetics of this specific point in the history of Magic: the Gathering.">
+    <meta property="og:image:alt"   content="Splinter Twin">
+    <!-- <meta property="og:image"       content="https:/preFIREmagic.com/RESOURCES/img/logo.webp"> -->
+    <style>:root{--page-color:var(--col-green);}</style>
+    <script defer src="./RESOURCES/script/decks.js" type="module"></script>
+  </head>
+
+  <style>
+    #search-input {
+      display: grid; grid-template-columns: repeat(3, 33%);
+    }
+    #search-input input {
+      border: 1px solid var(--col-darker);
+      filter: drop-shadow(0px 0px 5px 5px black); 
+      width:  calc(90% - 2px);
+      padding-block: 2%; margin-inline: 2%;
+      margin-bottom: 5%;
+      background-color: #111111aa;  
+      color: var(--col-lighter);
+      font-size: 1.1em;
+      &:hover {background-color: #333333bb;}
+      &:focus {background-color: #555555cc; outline: none; color: var(--col-lightest); }
+      &:active{background-color: #777777dd;}
+    } 
+    #search-input label {
+      font-family : beleren;
+      color       : white;
+      width       : 20%;
+      margin-left : 1%;
+      display     : inline-block;
+    }
+    #goButton {
+      width: 80%; 
+      margin-inline: 10%;
+    }
+
+    #search-output h3 { background-color: transparent; color: var(--col-lighter); background-image: linear-gradient(to right, #333, transparent); }
+    #search-output h4 { background-color: transparent; color: var(--col-regular); }
+    #search-output .deck { border-radius: 5px; box-shadow: 0px 0px 1px 1px black; overflow: hidden; width: 98%; margin: 1%; background-color: linear-gradient(to bottom, #11111111, transparent); }
+
+    .deckbox {
+      box-shadow: 0px 0px 5px 1px var(--col-darker);
+      outline: 1px solid black;
+      height: 200px;
+      background-position: center; 
+      background-size    : cover;
+      overflow: hidden;
+      position: relative;  
+      z-index: 2;
+      display: block;
+      &:hover{
+        z-index: 3;
+      }
+    }
+    .deckbox h3 {
+      width: 100%;
+      position: absolute; bottom: 0;
+      background-image: linear-gradient(to bottom, #333333aa, #111);
+      background-color: transparent;
+      text-align: center;   
+      color: var(--col-lighter);
+      text-shadow: 0px 2px 3px black;
+    }
+
+    .download-container {
+      margin-top: 5px;;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      button { width: 98%; margin: 1%}
+    }
+    
+  </style>
+
+  <body class="background_mox_opal">
+    <header>
+      <h1>PreFIRE</h1>
+    </header>
+    <main>
+
+      <section>
+        <h2>PreFIRE Decks</h2>
+        <p>Jump right into the fray with any of these ready-to-play PreFIRE decks!</p>
+        <span id="preview-target" class="splitMob splitMob-5"></span>
+      </section>
+
+      <section>
+        <h2>Deck Search</h2>
+        <p>Looking for a specific kind of list? Enter a card you like below and we’ll find you a list with it.</p>
+        <span class="splitMob splitMob-2">
+          <span   id="search-input"></span>
+          <button id="goButton">Search</button>
+        </span>
+      </section>
+
+      <section>
+        <h2>Output</h2>
+        <span id="search-output" class="splitMob splitMob-4"></span>
+      </section>
+
+    </main>
+    <footer></footer>
+  </body>
+</html>

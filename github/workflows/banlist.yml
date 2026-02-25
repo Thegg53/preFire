@@ -1,0 +1,30 @@
+name: Build banlist JSON
+
+on:
+  push:
+    paths:
+      - "INPUT/banlists/*"
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Make script executable
+        run: chmod +x ./SCRIPTS/banlist.sh
+
+      - name: Generate JSON
+        run: ./SCRIPTS/banlist.sh
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: banlist-files
+          path: |
+            ./RESOURCES/data/lists/banlist.js
+            ./RESOURCES/data/lists/watchlist.js
+          if-no-files-found: error

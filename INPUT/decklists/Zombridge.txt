@@ -1,0 +1,32 @@
+3 Blackcleave Cliffs
+3 Blood Artist
+1 Blood Crypt
+4 Bloodghast
+4 Bloodstained Mire
+4 Bridge from Below
+2 Cathartic Reunion
+2 Collective Brutality
+2 Cryptbreaker
+4 Faithless Looting
+1 Gemstone Mine
+4 Gravecrawler
+1 Greater Gargadon
+1 Mountain
+1 Overgrown Tomb
+4 Prized Amalgam
+3 Smuggler's Copter
+4 Stitcher's Supplier
+1 Stomping Ground
+2 Swamp
+4 Verdant Catacombs
+4 Viscera Seer
+1 Watery Grave
+
+SIDEBOARD:
+1 Abrupt Decay
+2 Assassin's Trophy
+1 Darkblast
+2 Engineered Explosives
+4 Leyline of the Void
+3 Nature's Claim
+2 Thoughtseize

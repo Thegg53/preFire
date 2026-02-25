@@ -1,0 +1,12 @@
+{
+  "Twin"    : "Splinter_Twin",
+  "Pod"     : "Birthing_Pod",
+  "Jund"    : "Tarmogoyf",
+  "Affinity": "Arcbound_Ravager",
+  "Tron"    : "Karn_Liberated",
+  "Humans"  : "Champion_of_the_Parish",
+  "Burn"    : "Eidolon_of_the_Great_Revel",
+  "Shadow"  : "Death's_Shadow",
+  "Dredge"  : "Prized_Amalgam",
+  "Titan"   : "Primeval_Titan"
+}

@@ -1,0 +1,49 @@
+1 Archangel of Thune
+2 Assassin's Trophy
+4 Birds of Paradise
+4 Birthing Pod
+2 Chord of Calling
+1 Dryad Arbor
+1 Eternal Witness
+1 Felidar Guardian
+2 Forest
+1 Gavony Township
+1 Godless Shrine
+4 Green Sun's Zenith
+1 Horizon Canopy
+2 Kitchen Finks
+1 Knight of Autumn
+1 Murmuring Bosk
+1 Noble Hierarch
+2 Overgrown Tomb
+1 Plains
+1 Ravenous Chupacabra
+3 Razorverge Thicket
+1 Renegade Rallier
+1 Restoration Angel
+1 Scavenging Ooze
+1 Shalai, Voice of Plenty
+1 Siege Rhino
+1 Sin Collector
+1 Spike Feeder
+1 Swamp
+1 Temple Garden
+4 Thoughtseize
+4 Verdant Catacombs
+2 Voice of Resurgence
+4 Windswept Heath
+
+SIDEBOARD:
+1 Assassin's Trophy
+1 Aven Mindcensor
+2 Damping Sphere
+1 Eidolon of Rhetoric
+1 Gaddock Teeg
+1 Kataki, War's Wage
+1 Knight of Autumn
+1 Linvala, Keeper of Silence
+2 Path to Exile
+1 Remorseful Cleric
+1 Selfless Spirit
+1 Spellskite
+1 Thrun, the Last Troll

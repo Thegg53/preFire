@@ -1,0 +1,30 @@
+name: Build decks JSON
+
+on:
+  push:
+    paths:
+      - "INPUT/decklists/*"
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Generate JSON
+        run:  python scripts/deckTextToJSON.py.json
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: all-cards-json
+          path: all_cards.json
+          if-no-files-found: error
