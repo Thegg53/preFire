@@ -1,0 +1,8 @@
+fetch_card_image.py
+pyproject.toml
+prefire_scripts.egg-info/PKG-INFO
+prefire_scripts.egg-info/SOURCES.txt
+prefire_scripts.egg-info/dependency_links.txt
+prefire_scripts.egg-info/entry_points.txt
+prefire_scripts.egg-info/requires.txt
+prefire_scripts.egg-info/top_level.txt
