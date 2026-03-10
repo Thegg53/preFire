@@ -7,6 +7,7 @@ import { makeDownloadLink, makeClipboardLink, elementWithText } from "./modules/
 const output   = document.getElementById("search-output");
 
 makeNav();
+
 getJSON("lists/decks").then(deckData=>{
   makeSearchBoxes(deckData);
   getJSON("lists/decks-with-images").then(cardNames=>{
