@@ -1,12 +1,12 @@
 {
-  "Twin"    : "Splinter_Twin",
-  "Pod"     : "Birthing_Pod",
-  "Jund"    : "Tarmogoyf",
-  "Affinity": "Arcbound_Ravager",
-  "Tron"    : "Karn_Liberated",
-  "Humans"  : "Champion_of_the_Parish",
-  "Burn"    : "Eidolon_of_the_Great_Revel",
-  "Shadow"  : "Death's_Shadow",
-  "Dredge"  : "Prized_Amalgam",
-  "Titan"   : "Primeval_Titan"
+  "Twin"    : "splinter_twin",
+  "Pod"     : "birthing_pod",
+  "Jund"    : "tarmogoyf",
+  "Affinity": "arcbound_ravager",
+  "Tron"    : "karn_liberated",
+  "Humans"  : "champion_of_the_parish",
+  "Burn"    : "eidolon_of_the_great_revel",
+  "Shadow"  : "death's_shadow",
+  "Dredge"  : "prized_amalgam",
+  "Titan"   : "primeval_titan"
 }
