@@ -57,4 +57,4 @@ Then open the URL printed in the terminal (usually http://localhost:3000).
 - [ ] **Banlist page — original printings**: fetch card images using the Scryfall set parameter (`?set=<code>`) to show the historically correct printing for each banned/watched card, rather than the default (usually most recent) Scryfall result. The set code for each card would need to be stored alongside the card name in `INPUT/banlists/banlist.js` and `watchlist.js`.
 - [ ] figure out the wrong card search. Example: basic forest points to Deep Forest hermit (reported by battlebear) 
 - [ ] change the 6 sample text in the landing page. Ideas are a count of top 8s for the card, or links to decklists using the card
-      
+- [] add set symbols in the Cards page, in additon to the 3-letter expansion name/code      
