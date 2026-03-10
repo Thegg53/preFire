@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: prefire-scripts
+Version: 0.1.0
+Summary: Utility scripts for PreFIRE
+Requires-Python: >=3.8
+Requires-Dist: Pillow>=10.0.0

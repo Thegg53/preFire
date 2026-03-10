@@ -52,9 +52,52 @@ Then open the URL printed in the terminal (usually http://localhost:3000).
 
 ---
 
+## Scripts
+
+### Setting up the Python Virtual Environment
+
+Some scripts require Python dependencies. Set up a virtual environment in the SCRIPTS directory:
+
+```bash
+cd SCRIPTS
+python3 -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+pip install -e .
+```
+
+The `.venv` directory is gitignored and won't be committed.
+
+### Fetching Card Images from Scryfall
+
+Use `fetch_card_image.py` to download card images from Scryfall and save them as WebP files in the correct directories (`RESOURCES/img/card/large` and `RESOURCES/img/card/small`).
+
+**Usage:**
+```bash
+cd SCRIPTS
+source .venv/bin/activate
+python3 fetch_card_image.py "Card Name"              # Oldest printing (8ED-RNA, paper, core/expansion)
+python3 fetch_card_image.py "Card Name" --set MRD    # Specific set (Mirrodin)
+python3 fetch_card_image.py "Card Name" --set "10E"  # 10th Edition
+```
+
+**Examples:**
+```bash
+python3 fetch_card_image.py "Plains" --set "10E"
+python3 fetch_card_image.py "Splinter Twin"          # Defaults to oldest printing
+python3 fetch_card_image.py "Forest"
+```
+
+The script will:
+1. Query Scryfall's API for the card (from oldest printing in the range if no set specified)
+2. Download the card image
+3. Convert to WebP format
+4. Save as large (~488x680px) and small (~150x209px) versions
+
+---
+
 ## TODO
 
 - [ ] **Banlist page — original printings**: fetch card images using the Scryfall set parameter (`?set=<code>`) to show the historically correct printing for each banned/watched card, rather than the default (usually most recent) Scryfall result. The set code for each card would need to be stored alongside the card name in `INPUT/banlists/banlist.js` and `watchlist.js`.
 - [ ] figure out the wrong card search. Example: basic forest points to Deep Forest hermit (reported by battlebear) 
 - [ ] change the 6 sample text in the landing page. Ideas are a count of top 8s for the card, or links to decklists using the card
-      
+- [] add set symbols in the Cards page, in additon to the 3-letter expansion name/code      

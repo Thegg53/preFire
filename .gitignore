@@ -1,2 +1,7 @@
 # Local Netlify folder
 .netlify
+
+# Python virtual environments
+.venv
+venv
+env

@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prefire-scripts"
+version = "0.1.0"
+description = "Utility scripts for PreFIRE"
+requires-python = ">=3.8"
+dependencies = [
+    "Pillow>=10.0.0",
+]
+
+[tool.setuptools]
+py-modules = ["fetch_card_image"]
+
+[project.scripts]
+fetch-card = "fetch_card_image:main"

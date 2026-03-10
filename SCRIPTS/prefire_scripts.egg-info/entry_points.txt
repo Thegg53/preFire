@@ -1,0 +1,2 @@
+[console_scripts]
+fetch-card = fetch_card_image:main
