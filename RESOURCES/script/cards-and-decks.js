@@ -2,6 +2,7 @@ import { makeNav } from "./modules/nav.js"
 import { getJSON } from "./modules/getJSON.js"
 import { addHoverCardToElement } from "./modules/hoverCard.js"
 import { makeDownloadLink, makeClipboardLink, elementWithText } from "./modules/utils.js";
+import setIcons from "../img/set_icons/setIcons.js";
 
 // Only call makeNav once for the combined page
 makeNav();
@@ -39,7 +40,21 @@ function setUpSetsData(){
     li.appendChild(a);
     return li;
   };
-  sets.forEach(setName=>setsElement.appendChild(makeLiWithText(setName)));
+  const makeLiWithImage = setName => {
+    const li    = document.createElement("li"); 
+    const a     = document.createElement("a"); 
+    const img   = document.createElement("img");
+    img.src     = setIcons[setName] || "";
+    img.alt     = setName;
+    img.classList.add("set-icon");
+    a.href      = `https://mtg.fandom.com/wiki/${setName}`;
+    a.target    = "_blank";
+    a.appendChild(img);
+    a.appendChild(document.createTextNode(setName));
+    li.appendChild(a);
+    return li;
+  }
+  sets.forEach(setName=>setsElement.appendChild(makeLiWithImage(setName)));
 }
 
 function validate(cardData, text) {
