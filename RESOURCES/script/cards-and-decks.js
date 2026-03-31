@@ -47,10 +47,10 @@ function setUpSetsData(){
     img.src     = setIcons[setName] || "";
     img.alt     = setName;
     img.classList.add("set-icon");
-    a.appendChild(img);
     a.href      = `https://mtg.fandom.com/wiki/${setName}`;
     a.target    = "_blank";
     a.appendChild(img);
+    a.appendChild(document.createTextNode(setName));
     li.appendChild(a);
     return li;
   }
