@@ -2,7 +2,7 @@ import { makeNav } from "./modules/nav.js"
 import { getJSON } from "./modules/getJSON.js"
 import { addHoverCardToElement } from "./modules/hoverCard.js"
 import { makeDownloadLink, makeClipboardLink, elementWithText } from "./modules/utils.js";
-import { setIcons } from "../img/set_icons/setIcons.js";
+import setIcons from "../img/set_icons/setIcons.js";
 
 // Only call makeNav once for the combined page
 makeNav();

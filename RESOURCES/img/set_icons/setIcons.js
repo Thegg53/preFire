@@ -70,9 +70,14 @@ const setLinks = [
   'https://svgs.scryfall.io/sets/tsb.svg?1774238400'
 ]; 
 
-export const setIcons = Object.fromEntries(
+const setIcons = Object.fromEntries(
   setLinks.map(url => {
     const code = url.match(/sets\/([a-z0-9]+)\.svg/i)[1].toUpperCase();
     return [code, url];
   })
 );
+
+// Handle the special case of TSB which has a different code in the URL than its set code
+setIcons["TSB"] = "https://svgs.scryfall.io/sets/tsp.svg?1774238400";
+
+export default setIcons;
