@@ -1,12 +1,23 @@
-import { makeNav               } from "./modules/nav.js"
-import { getJSON               } from "./modules/getJSON.js"
-import { addHoverCardToElement } from "./modules/hoverCard.js"
-import { makeDownloadLink, makeClipboardLink, elementWithText } from "./modules/utils.js";
+getJSON("lists/cards").then(cardData => setUpValidator(cardData));
+
+const validatorElement = document.getElementById("validator");
+const startingText = validatorElement.value;
+
+function setUpValidator(cardData){
+  const issuesElement    = document.getElementById("issues"   );
+  const processDecklist  = () => issuesElement.innerText = cardData ? validate(cardData, validatorElement.value) : "Card Data not yet loaded!"
+  validatorElement.addEventListener("keyup", processDecklist);
+  validatorElement.addEventListener("click", ()=>{
+    if (validatorElement.value == startingText) validatorElement.value = "";
+    processDecklist
+  });
+}
 
 
+
+
+// ============ DECKS SECTION ============
 const output   = document.getElementById("search-output");
-
-makeNav();
 
 getJSON("lists/decks").then(deckData=>{
   makeSearchBoxes(deckData);
@@ -14,7 +25,6 @@ getJSON("lists/decks").then(deckData=>{
     makeSearchImages(cardNames, deckData);
   })
 });
-
 
 const isMatch = (deck, params) => {
   const active = params.filter((p) => p.val !== ""); if (active.length === 0) return true;
@@ -26,26 +36,9 @@ const isMatch = (deck, params) => {
   });
 };
 
-const findDecks = (deckData, params) => deckData.filter((deck) => isMatch(deck, params));
 
-function makeSearchImages(kvp, deckData) {
-  const target = document.getElementById("preview-target");
-  Object.entries(kvp).forEach(([deckName, card]) => {
-    const container = document.createElement("span");
-    const title     = elementWithText("h3", deckName);
-    container.appendChild(title);
-    container.style.backgroundImage = `url("./RESOURCES/img/deckbox/${card}.png")`;
-    container.classList.add("card", "glowOnHover", "deckbox");
-    target.appendChild(container);
 
-    container.addEventListener("click", () => {
-      const params = [{ key: "main", val: String(card).trim().toLowerCase().replaceAll("_"," ") }];
-      const matches = findDecks(deckData, params);
-      buildResults(matches, output);
-      output.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-    });
-  });
-}
+
 
 function makeSearchBoxes(deckData) {
   const input    = document.getElementById("search-input");
@@ -57,8 +50,6 @@ function makeSearchBoxes(deckData) {
     { key: "side", label: "Side:", placeholder: "Silence" },
     { key: "side", label: "And:", placeholder: "Supreme Verdict" },
     { key: "side", label: "And:", placeholder: "Mana Leak" },
-    // { key: "arch", label: "Archetype:", placeholder: "Control" },
-    // { key: "cols", label: "Colors:", placeholder: "UR" },
   ];
 
   FIELDS.forEach((f, i) => input.appendChild(makeTextInput(`${f.key}-${i}`, f)));
@@ -67,9 +58,6 @@ function makeSearchBoxes(deckData) {
     buildResults(matches, output);
   });
 }
-
-
-
 
 function makeTextInput(id, { key, label, placeholder }) {
   const labelEl = document.createElement("label");
@@ -90,8 +78,6 @@ function makeTextInput(id, { key, label, placeholder }) {
   return container;
 }
 
-
-
 function performSearch(containerEl, deckData) {
   const params = Array.from(containerEl.querySelectorAll("input.search-field")).map((inp) => ({
     key: inp.dataset.key,
@@ -100,9 +86,6 @@ function performSearch(containerEl, deckData) {
   return findDecks(deckData, params);
 }
 
-
-
-
 function buildResults(matches, output) {
   output.innerHTML = "";
 
@@ -110,7 +93,6 @@ function buildResults(matches, output) {
 
   const renderList = (label, pairs) => {
     const wrap = document.createElement("div");
-    //wrap.appendChild(elementWithText("h4", label));
     const ul   = document.createElement("ul");
     pairs.forEach(([name, count]) => {
       const li = elementWithText("li", `${count} ${name}`);
@@ -135,7 +117,6 @@ function buildResults(matches, output) {
     btns.appendChild(makeClipboardLink(`INPUT/decklists/${name}.txt`, "Clipboard"));
     container.appendChild(btns);
     container.appendChild(renderList("Main", mainPairs));
-    //container.appendChild(renderList("Sideboard:", sidePairs));
     output.appendChild(container);
   };
 
@@ -143,3 +124,4 @@ function buildResults(matches, output) {
   matches.forEach(displayResult);
   output.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 }
+

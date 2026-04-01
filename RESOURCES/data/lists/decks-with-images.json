@@ -3,10 +3,13 @@
   "Pod"     : "birthing_pod",
   "Jund"    : "tarmogoyf",
   "Affinity": "arcbound_ravager",
-  "Tron"    : "karn_liberated",
-  "Humans"  : "champion_of_the_parish",
+  "Dredge"  : "faithless_looting",
+  "Humans"  : "noble_hierarch",
+
   "Burn"    : "eidolon_of_the_great_revel",
   "Shadow"  : "death's_shadow",
-  "Dredge"  : "prized_amalgam",
-  "Titan"   : "primeval_titan"
+  "Titan"   : "primeval_titan",
+  "Tron"    : "karn_liberated",
+  "Storm"   : "grapeshot",
+  "UW Control": "celestial_colonade"
 }

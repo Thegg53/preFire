@@ -39,6 +39,33 @@
         <p>Coming soon! Check back for additional PreFIRE resources and community links.</p>
       </section>
 
+      <section>
+        <h2>Deck Checker</h2>
+        <p>Enter your list and check if it's PreFIRE legal!</p>
+        <br>
+        <hr>
+        <textarea type="text" id="validator" spellcheck="false">
+          ###Input your deck list here.
+          ###Each card name should be on a new line.
+        </textarea>
+        <p id="issues"></p>
+      </section>
+
+
+
+      <section>
+        <h2>Deck Search</h2>
+        <p>Looking for a specific kind of list? Enter a card you like below and we'll find you a list with it.</p>
+        <span class="splitMob splitMob-2">
+          <span   id="search-input"></span>
+          <button id="goButton">Search</button>
+        </span>
+      </section>
+
+      <section>
+        <h2>Search Results</h2>
+        <span id="search-output" class="splitMob splitMob-4"></span>
+      </section>
     </main>
     <footer></footer>
   </body>
