@@ -3,7 +3,7 @@
  * eg Jace, the Mind Scultptor => jace__the_mind_sculptor
  * */
 export function makeCleanCardName(cardName) {
-  return cardName.replaceAll(" ","_").replaceAll("'","_").replaceAll(",","_").toLowerCase();
+  return cardName.replaceAll(" ","_").replaceAll("'","_").replaceAll(",","_").replaceAll("/","_").toLowerCase();
 }
 
 function getCardSRC(cardName, size) {
