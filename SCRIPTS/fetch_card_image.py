@@ -22,7 +22,7 @@ from io import BytesIO
 
 def make_clean_card_name(card_name):
     """Convert card name to filename format: 'Jace, the Mind Sculptor' -> 'jace__the_mind_sculptor'"""
-    return card_name.replace(" ", "_").replace("'", "_").replace(",", "_").lower()
+    return card_name.replace(" ", "_").replace("'", "_").replace(",", "_").replace("/", "_").lower()
 
 def fetch_card_from_scryfall(card_name, set_code=None):
     """
