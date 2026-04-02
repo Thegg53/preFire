@@ -83,7 +83,13 @@ function displayDecklists(matches, output) {
     btns.appendChild(makeDownloadLink (`INPUT/decklists/${name}.txt` , "Download"));
     btns.appendChild(makeClipboardLink(`INPUT/decklists/${name}.txt`, "Clipboard"));
     container.appendChild(btns);
-    container.appendChild(renderList("Main", mainPairs));
+    const listsContainer = document.createElement("span");
+    listsContainer.style.display = "grid";
+    listsContainer.style.gridTemplateColumns = "1fr 1fr";
+    listsContainer.style.gap = "20px";
+    listsContainer.appendChild(renderList("Main", mainPairs));
+    if (sidePairs.length > 0) listsContainer.appendChild(renderList("Side", sidePairs));
+    container.appendChild(listsContainer);
     output.appendChild(container);
   };
 
