@@ -19,26 +19,25 @@ export function elementWithText(elementType, text) {
   return element;
 }
 
-export function makeDownloadLink (filePath, text="Download") {
+export function makeDownloadLink (fileName, content, text="Download") {
   const element = elementWithText("button", text);
   element.addEventListener("click", () => {
     const link    = document.createElement("a");
-    link.href     = filePath;
-    link.download = filePath.split("/").pop();
+    link.href     = URL.createObjectURL(new Blob([content], { type: 'text/plain' }));
+    link.download = fileName + ".txt";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    URL.revokeObjectURL(link.href);
   });
   return element;
 }
 
 
-export function makeClipboardLink(filePath, text = "Clipboard") {
+export function makeClipboardLink(content, text = "Clipboard") {
   const element = elementWithText("button", text);
   element.addEventListener("click", async () => { try {
-    const res      = await fetch(filePath);
-    const contents = await res.text();
-    await navigator.clipboard.writeText(contents);
+    await navigator.clipboard.writeText(content);
     const original = element.innerText;
     element.innerText = "Copied!";
     setTimeout(() => { element.innerText = original; }, 2000);

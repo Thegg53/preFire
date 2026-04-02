@@ -78,10 +78,18 @@ function displayDecklists(matches, output) {
     container.appendChild(elementWithText("h3", name[0].replaceAll("_", " ")));
     if (arch) container.appendChild(elementWithText("p", `Archetype: ${arch}`));
     if (cols) container.appendChild(elementWithText("p", `Colors: ${cols}`));
+    
+    // Generate decklist content from JSON data
+    const decklistContent = [
+      ...main,
+      ...(side && side.length > 0 ? ['', 'SIDEBOARD:', ...side] : [])
+    ].join('\n');
+    
     const btns = document.createElement("span");
     btns.classList.add("download-container");
-    btns.appendChild(makeDownloadLink (`INPUT/decklists/${name}.txt` , "Download"));
-    btns.appendChild(makeClipboardLink(`INPUT/decklists/${name}.txt`, "Clipboard"));
+    const deckFileName = name[0].replaceAll(" ", "_");
+    btns.appendChild(makeDownloadLink(deckFileName, decklistContent, "Download"));
+    btns.appendChild(makeClipboardLink(decklistContent, "Clipboard"));
     container.appendChild(btns);
     const listsContainer = document.createElement("span");
     listsContainer.style.display = "grid";
