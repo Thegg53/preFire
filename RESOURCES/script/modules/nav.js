@@ -1,8 +1,8 @@
 export function makeNav(){
   const discordLink = "https://discord.gg/P7bV8ttzgT";
   const colors      = ["blue"  , "black", "red"    , "green", "white"];
-  const pages       = ["Rules", "Decks", "Legal Cards", "More Resources" , "About"];
-  const fileNames   = ["rules", "decks", "legality", "more-resources", "about"];
+  const pages       = ["Rules",  "Legal Cards","Decks", "More Resources" , "About"];
+  const fileNames   = ["rules",  "legality", "decks", "more-resources", "about"];
   const header      = document.querySelector("header");
   const footer      = document.querySelector("footer");
   const nav         = document.createElement("nav");

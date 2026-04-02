@@ -10,7 +10,7 @@ makeNav();
 
 
 // ============ DECKS SECTION ============
-const output   = document.getElementById("search-output");
+const output   = document.getElementById("decklist");
 
 getJSON("lists/decks").then(deckData=>{
   getJSON("lists/decks-with-images").then(cardNames=>{
@@ -41,12 +41,50 @@ function makeSearchImages(kvp, deckData) {
     target.appendChild(container);
 
     container.addEventListener("click", () => {
-      const params = [{ key: "main", val: String(card).trim().toLowerCase().replaceAll("_"," ") }];
+      const params = [{ key: "name", val: deckName }];
       const matches = findDecks(deckData, params);
-      buildResults(matches, output);
+      displayDecklists(matches, output);
       output.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
     });
   });
 }
 
 
+function displayDecklists(matches, output) {
+  output.innerHTML = "";
+
+  const zipPairs = (names = [], counts = []) => names.map((name, i) => [name, counts[i] ?? 0]);
+
+  const renderList = (label, pairs) => {
+    const wrap = document.createElement("div");
+    const ul   = document.createElement("ul");
+    pairs.forEach(([name, count]) => {
+      const li = elementWithText("li", `${count} ${name}`);
+      addHoverCardToElement(li, name);
+      ul.appendChild(li);
+    });
+    wrap.appendChild(ul);
+    return wrap;
+  };
+
+  const displayResult = ({ name, arch, cols, main, main_amnt, side, side_amnt }) => {
+    const container = document.createElement("span");
+    container.classList.add("deck");
+    const mainPairs = zipPairs(main, main_amnt);
+    const sidePairs = zipPairs(side, side_amnt);
+    container.appendChild(elementWithText("h3", name[0].replaceAll("_", " ")));
+    if (arch) container.appendChild(elementWithText("p", `Archetype: ${arch}`));
+    if (cols) container.appendChild(elementWithText("p", `Colors: ${cols}`));
+    const btns = document.createElement("span");
+    btns.classList.add("download-container");
+    btns.appendChild(makeDownloadLink (`INPUT/decklists/${name}.txt` , "Download"));
+    btns.appendChild(makeClipboardLink(`INPUT/decklists/${name}.txt`, "Clipboard"));
+    container.appendChild(btns);
+    container.appendChild(renderList("Main", mainPairs));
+    output.appendChild(container);
+  };
+
+  if (!matches || matches.length === 0) return output.appendChild(elementWithText("p", "No results found."));
+  matches.forEach(displayResult);
+  output.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+}
