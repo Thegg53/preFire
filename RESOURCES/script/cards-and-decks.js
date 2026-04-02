@@ -53,7 +53,10 @@ function makeSearchImages(kvp, deckData) {
 function displayDecklists(matches, output) {
   output.innerHTML = "";
 
-  const zipPairs = (names = [], counts = []) => names.map((name, i) => [name, counts[i] ?? 0]);
+  const parseDeckList = (list) => list.map(line => {
+    const match = line.match(/^(\d+)\s+(.+)$/);
+    return match ? [match[2], parseInt(match[1])] : [line, 0];
+  });
 
   const renderList = (label, pairs) => {
     const wrap = document.createElement("div");
@@ -67,11 +70,11 @@ function displayDecklists(matches, output) {
     return wrap;
   };
 
-  const displayResult = ({ name, arch, cols, main, main_amnt, side, side_amnt }) => {
+  const displayResult = ({ name, arch, cols, main, side }) => {
     const container = document.createElement("span");
     container.classList.add("deck");
-    const mainPairs = zipPairs(main, main_amnt);
-    const sidePairs = zipPairs(side, side_amnt);
+    const mainPairs = parseDeckList(main);
+    const sidePairs = side ? parseDeckList(side) : [];
     container.appendChild(elementWithText("h3", name[0].replaceAll("_", " ")));
     if (arch) container.appendChild(elementWithText("p", `Archetype: ${arch}`));
     if (cols) container.appendChild(elementWithText("p", `Colors: ${cols}`));
