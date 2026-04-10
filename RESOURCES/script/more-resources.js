@@ -1,127 +1,107 @@
+import { getJSON } from "./modules/getJSON.js";
+import { banlist } from "../data/lists/banlist.js";
+
 getJSON("lists/cards").then(cardData => setUpValidator(cardData));
 
 const validatorElement = document.getElementById("validator");
+const checkDeckButton = document.getElementById("checkDeckButton");
 const startingText = validatorElement.value;
+
+function validate(cardData, decklistText) {
+  const lines = decklistText.trim().split('\n').filter(line => line.trim());
+  const issues = [];
+  const legalCards = cardData?.cards || [];
+  let totalMaindeckCards = 0;
+  let sideboardCards = 0;
+  let inSideboard = false;
+
+  lines.forEach((line, index) => {
+    const trimmed = line.trim();
+    if (!trimmed) return;
+
+    // Check for sideboard markers (case-insensitive)
+    if (/^(sideboard|sb)\s*:?\s*$/i.test(trimmed)) {
+      inSideboard = true;
+      return;
+    }
+
+    // Parse "4 Card Name" format
+    const match = trimmed.match(/^(\d+)\s+(.+)$/);
+    if (!match) {
+      issues.push(`Line ${index + 1}: Invalid format "${trimmed}"`);
+      return;
+    }
+
+    const [, countStr, cardName] = match;
+    const count = parseInt(countStr, 10);
+
+    if (inSideboard) {
+      sideboardCards += count;
+    } else {
+      totalMaindeckCards += count;
+    }
+
+    // Normalize card name: convert "/" to " // " for split cards
+    const normalizedCardName = cardName.replace(/\s*\/\/?\s*/g, ' // ');
+
+    // Check if card is in legal cards list
+    if (!legalCards.includes(cardName) && !legalCards.includes(normalizedCardName)) {
+      issues.push(`Line ${index + 1}: "${cardName}" is not a legal PreFIRE card`);
+    }
+
+    // Check if card is banned
+    if (banlist.includes(cardName) || banlist.includes(normalizedCardName)) {
+      issues.push(`Line ${index + 1}: "${cardName}" is BANNED in PreFIRE`);
+    }
+
+    // Check card count limit (4 of each)
+    if (count > 4) {
+      issues.push(`Line ${index + 1}: "${cardName}" - can't have more than 4 copies`);
+    }
+  });
+
+  // Check maindeck size (60 cards minimum)
+  if (totalMaindeckCards < 60) {
+    issues.push(`Maindeck: ${totalMaindeckCards} cards (minimum 60)`);
+  }
+
+  // Check sideboard size (max 15 cards)
+  if (sideboardCards > 15) {
+    issues.push(`Sideboard: ${sideboardCards} cards (maximum 15)`);
+  }
+
+  // Build success message
+  if (issues.length === 0) {
+    let msg = `✓ Legal deck! (${totalMaindeckCards} cards`;
+    if (sideboardCards > 0) msg += `, SB: ${sideboardCards} cards`;
+    msg += ')';
+    return msg;
+  }
+
+  return issues.join('\n');
+}
 
 function setUpValidator(cardData){
   const issuesElement    = document.getElementById("issues"   );
   const processDecklist  = () => issuesElement.innerText = cardData ? validate(cardData, validatorElement.value) : "Card Data not yet loaded!"
+  
+  // Validate on keyup (real-time)
   validatorElement.addEventListener("keyup", processDecklist);
+  
+  // Clear placeholder text on first click/interaction
   validatorElement.addEventListener("click", ()=>{
     if (validatorElement.value == startingText) validatorElement.value = "";
-    processDecklist
+    processDecklist();
   });
+  
+  // Validate on button click
+  if (checkDeckButton) {
+    checkDeckButton.addEventListener("click", processDecklist);
+  }
 }
 
 
 
 
-// ============ DECKS SECTION ============
-const output   = document.getElementById("search-output");
 
-getJSON("lists/decks").then(deckData=>{
-  makeSearchBoxes(deckData);
-  getJSON("lists/decks-with-images").then(cardNames=>{
-    makeSearchImages(cardNames, deckData);
-  })
-});
-
-const isMatch = (deck, params) => {
-  const active = params.filter((p) => p.val !== ""); if (active.length === 0) return true;
-  const groups = active.reduce((acc, { key, val }) => { (acc[key] ??= []).push(val); return acc;}, {});
-  return Object.entries(groups).every(([key, terms]) => {
-    const haystack = Array.isArray(deck[key]) ? deck[key] : [];
-    const lowerHay = haystack.map((s) => String(s).toLowerCase());
-    return terms.every((term) => lowerHay.some((s) => s.includes(term.toLowerCase())));
-  });
-};
-
-
-
-
-
-function makeSearchBoxes(deckData) {
-  const input    = document.getElementById("search-input");
-  const goButton = document.getElementById("goButton");
-  const FIELDS   = [
-    { key: "main", label: "Main:", placeholder: "Tarmogoyf" },
-    { key: "main", label: "And:", placeholder: "Stomping Ground" },
-    { key: "main", label: "And:", placeholder: "Noble Hierarch" },
-    { key: "side", label: "Side:", placeholder: "Silence" },
-    { key: "side", label: "And:", placeholder: "Supreme Verdict" },
-    { key: "side", label: "And:", placeholder: "Mana Leak" },
-  ];
-
-  FIELDS.forEach((f, i) => input.appendChild(makeTextInput(`${f.key}-${i}`, f)));
-  goButton.addEventListener("click", () => {
-    const matches = performSearch(input, deckData);
-    buildResults(matches, output);
-  });
-}
-
-function makeTextInput(id, { key, label, placeholder }) {
-  const labelEl = document.createElement("label");
-  labelEl.htmlFor   = id;
-  labelEl.innerText = label;
-
-  const inputEl = document.createElement("input");
-  inputEl.placeholder = placeholder;
-  inputEl.id          = id;
-  inputEl.type        = "text";
-  inputEl.spellcheck  = false;
-  inputEl.dataset.key = key;
-  inputEl.classList.add("search-field");
-
-  const container = document.createElement("div");
-  container.appendChild(labelEl);
-  container.appendChild(inputEl);
-  return container;
-}
-
-function performSearch(containerEl, deckData) {
-  const params = Array.from(containerEl.querySelectorAll("input.search-field")).map((inp) => ({
-    key: inp.dataset.key,
-    val: inp.value.trim().toLowerCase(),
-  }));
-  return findDecks(deckData, params);
-}
-
-function buildResults(matches, output) {
-  output.innerHTML = "";
-
-  const zipPairs = (names = [], counts = []) => names.map((name, i) => [name, counts[i] ?? 0]);
-
-  const renderList = (label, pairs) => {
-    const wrap = document.createElement("div");
-    const ul   = document.createElement("ul");
-    pairs.forEach(([name, count]) => {
-      const li = elementWithText("li", `${count} ${name}`);
-      addHoverCardToElement(li, name);
-      ul.appendChild(li);
-    });
-    wrap.appendChild(ul);
-    return wrap;
-  };
-
-  const displayResult = ({ name, arch, cols, main, main_amnt, side, side_amnt }) => {
-    const container = document.createElement("span");
-    container.classList.add("deck");
-    const mainPairs = zipPairs(main, main_amnt);
-    const sidePairs = zipPairs(side, side_amnt);
-    container.appendChild(elementWithText("h3", name[0].replaceAll("_", " ")));
-    if (arch) container.appendChild(elementWithText("p", `Archetype: ${arch}`));
-    if (cols) container.appendChild(elementWithText("p", `Colors: ${cols}`));
-    const btns = document.createElement("span");
-    btns.classList.add("download-container");
-    btns.appendChild(makeDownloadLink (`INPUT/decklists/${name}.txt` , "Download"));
-    btns.appendChild(makeClipboardLink(`INPUT/decklists/${name}.txt`, "Clipboard"));
-    container.appendChild(btns);
-    container.appendChild(renderList("Main", mainPairs));
-    output.appendChild(container);
-  };
-
-  if (!matches || matches.length === 0) return output.appendChild(elementWithText("p", "No results found."));
-  matches.forEach(displayResult);
-  output.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-}
 

@@ -364,3 +364,31 @@ section#hero-banner{
   display             :block;
   &:hover{transform:none;}
 }
+
+textarea#validator {
+  width           : 96%;
+  margin-inline   : 2%;
+  margin-block    : 15px;
+  padding         : 12px;
+  min-height      : 300px;
+  font-family     : monospace;
+  font-size       : 0.9em;
+  line-height     : 1.5;
+  background-color: #1a1a1a;
+  color           : var(--col-lightest);
+  border          : 2px solid var(--col-darker);
+  border-radius   : 4px;
+  resize          : vertical;
+  overflow-y      : auto;
+  box-shadow      : inset 0px 0px 4px rgba(0, 0, 0, 0.5);
+  
+  &:focus {
+    outline       : none;
+    border-color  : var(--col-regular);
+    box-shadow    : inset 0px 0px 4px rgba(0, 0, 0, 0.5), 0px 0px 8px rgba(83, 177, 107, 0.3);
+  }
+  
+  &::placeholder {
+    color: #666;
+  }
+}
