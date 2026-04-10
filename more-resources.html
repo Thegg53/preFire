@@ -26,6 +26,7 @@
     <!-- <meta property="og:image"       content="https:/preFIREmagic.com/RESOURCES/img/logo.webp"> -->
     <style>:root{--page-color:var(--col-green);}</style>
     <script defer src="RESOURCES/script/index.js" type="module"></script>
+    <script defer src="RESOURCES/script/more-resources.js" type="module"></script>
   </head>
 
   <body class="background_mox_opal">
@@ -33,11 +34,6 @@
       <h1>PreFIRE</h1>
     </header>
     <main>
-
-      <section>
-        <h2>More Resources</h2>
-        <p>Coming soon! Check back for additional PreFIRE resources and community links.</p>
-      </section>
 
 
       <section>
@@ -50,38 +46,21 @@
         <a href="https://docs.google.com/spreadsheets/d/1XdWlFN6867u0tuuu1Vt_EeJPz-FUulDFQnLoVmdphSw/edit?gid=1274498955#gid=1274498955" target="_blank">HandShufflings compiled Google Sheets</a>
       </section>
       
-      <section>
-        <h2>Decklist Validator</h2>
-        <a href="https://badaro.github.io/validator/" target="_blank">Decklist Validator</a>
-      </section>
+      
       
       <section>
         <h2>Deck Checker</h2>
         <p>Enter your list and check if it's PreFIRE legal!</p>
-        <br>
-        <hr>
-        <textarea type="text" id="validator" spellcheck="false">
-          ###Input your deck list here.
-          ###Each card name should be on a new line.
-        </textarea>
+        <textarea id="validator" spellcheck="false" placeholder="Paste your deck list here&#10;Example:&#10;4 Arcbound Ravager&#10;4 Blinkmoth Nexus&#10;4 Cranial Plating&#10;4 Darksteel Citadel&#10;2 Etched Champion&#10;...more cards...&#10;&#10;Sideboard:&#10;2 Damping Sphere&#10;2 Dispatch&#10;2 Ghirapur Aether Grid&#10;1 Grafdigger's Cage&#10;...more sideboard cards..."></textarea>
+        <button id="checkDeckButton" class="ui-green">Check Deck</button>
         <p id="issues"></p>
       </section>
-
-
-
+      
       <section>
-        <h2>Deck Search</h2>
-        <p>Looking for a specific kind of list? Enter a card you like below and we'll find you a list with it.</p>
-        <span class="splitMob splitMob-2">
-          <span   id="search-input"></span>
-          <button id="goButton">Search</button>
-        </span>
+        <h2>Alternative Decklist Checker</h2>
+        <a href="https://badaro.github.io/validator/" target="_blank">Decklist Validator</a>
       </section>
-
-      <section>
-        <h2>Search Results</h2>
-        <span id="search-output" class="splitMob splitMob-4"></span>
-      </section>
+      
     </main>
     <footer></footer>
   </body>
