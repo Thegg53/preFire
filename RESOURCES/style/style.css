@@ -48,7 +48,6 @@ body.background_birthing_pod      {background-image:url("../img/backgrounds/birt
 body.background_mox_opal          {background-image:url("../img/backgrounds/mox_opal.webp");}
 body.background_faithless_looting {background-image:url("../img/backgrounds/faithless_looting.webp");}
 body.background_tarmogoyf         {background-image:url("../img/backgrounds/tarmogoyf.webp");}
-body.background_blazing_shoal     {background-image:url("../img/backgrounds/blazing_shoal.webp");}
 body.background_noble_hierarch    {background-image:url("../img/backgrounds/noble_hierarch.webp");}
 
 main { min-height: 100vh; }
@@ -250,44 +249,6 @@ section p, section li{
   width         : 96%; padding-inline: 2%;
   margin-bottom : 5px;
 }
-section#hero-banner{
-  width:calc(90% - var(--border-width)); margin-inline:5%;
-  background-size: cover;
-  background-position: top;
-  height: 50vh;
-  position: relative;
-  overflow: hidden;
-  button{
-    position: absolute;
-    top: 0; height: 100%;
-    width   : 5%;
-    padding : 0;
-    margin  : 0;
-    z-index : 2;
-    border: none;
-    background-color: transparent;    
-    background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,1), transparent);
-    color: white;
-    border-radius: 0;
-  }
-  button:nth-of-type(2){left:95%;}
-  button:nth-of-type(1){left: 0%;}
-  .hero-slide {
-    position           : absolute; top:0;
-    background-size    : cover;
-    background-position: top;
-    height             : 100%;
-    width              : 100%;
-    z-index: 1;
-    &.fromLeft {transform : translateX(-100%);left: 100%;}
-    &.fromRight{transform : translateX( 100%);left:-100%;}
-    &.enter    {transition: 0.8s ease;                   }
-    h2{text-align: center;}
-    p{width: 90%; margin-inline: 5%; font-size: 2em; text-shadow: 0px 3px 5px black;}
-
-  }
-}
-
 
 .splitMob, .enforcedGrid{display: grid; width: 100%}
 @media only screen and (max-width:1000px){ .splitMob { display: block; }}
