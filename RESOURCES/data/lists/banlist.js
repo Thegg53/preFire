@@ -9,7 +9,6 @@ export const banlist = [
       "Cloudpost",
       "Creeping Chill",
       "Counterbalance",
-      "Dark Depths",
       "Deathrite Shaman",
       "Dig Through Time",
       "Eye of Ugin",
