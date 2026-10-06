@@ -1,15 +1,15 @@
 {
-  "Twin"    : "splinter_twin",
-  "Pod"     : "birthing_pod",
-  "Jund"    : "tarmogoyf",
   "Affinity": "mox_opal",
-  "Dredge"  : "faithless_looting",
   "Humans"  : "noble_hierarch",
+  "Twin"    : "splinter_twin",
+  "Dredge"  : "faithless_looting",
+  "Jund"    : "tarmogoyf",
+  "Pod"     : "birthing_pod",
 
-  "Burn"    : "eidolon_of_the_great_revel",
-  "Shadow"  : "death's_shadow",
-  "Titan"   : "primeval_titan",
   "Tron"    : "karn_liberated",
+  "UW Control": "jace_the_mind_sculptor",
+  "Burn"    : "eidolon_of_the_great_revel",
   "Storm"   : "grapeshot",
-  "UW Control": "jace_the_mind_sculptor"
+  "Titan"   : "primeval_titan",
+  "Shadow"  : "death's_shadow"
 }

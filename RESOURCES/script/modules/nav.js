@@ -1,6 +1,6 @@
 export function makeNav(){
   const discordLink = "https://discord.gg/P7bV8ttzgT";
-  const colors      = ["blue"  , "black", "red"    , "green", "white"];
+  const colors      = ["white", "blue", "black", "red", "green" ];
   const pages       = ["Rules",  "Legal Cards","Decks", "More Resources" , "About"];
   const fileNames   = ["rules",  "legality", "decks", "more-resources", "about"];
   const header      = document.querySelector("header");

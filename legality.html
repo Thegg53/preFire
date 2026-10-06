@@ -29,13 +29,53 @@
   </head>
 
   <style>
-    #sets {display: grid; grid-template-columns: repeat(5, 20%);}
+    .set-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .set-list {
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      column-gap: 20px;
+      row-gap: 30px;
+      width: 100%;
+      max-width: 1450px;
+      padding: 0;
+    }
+
+    .set-item {
+      display: flex;
+      box-sizing: border-box;
+      list-style-type: none; 
+      text-align: center; 
+      margin: 0;
+      padding: 0;
+    }
+
+    .set-link {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      row-gap: 10px;
+      padding: 10px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.075);
+      border-radius: 5px;
+    }
+
+    .set-link:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
 
     .set-icon {
-      width: 20px; 
-      height: 20px;
-      margin-right: 5px;
-      vertical-align: middle;
+      width: 50px; 
+      height: 50px;
       filter: invert(100%);
     }
   </style>
@@ -52,7 +92,9 @@
       <section>
         <h2>Legal Sets</h2>
         <p>The following sets are legal in PreFIRE:</p>
-        <ul id="sets"></ul>
+        <div class="set-wrapper">
+          <ul id="sets" class="set-list"></ul>
+        </div>
       </section>
       
       <section>
