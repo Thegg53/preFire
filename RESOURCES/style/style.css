@@ -8,7 +8,7 @@
   --col-black: #848484; --col-ui-black: #c4bdbc;
   --col-red  : #e75f5f; --col-ui-red  : #f4cab5;
   --col-green: #53b16b; --col-ui-green: #bfccc2;
-  --col-ui-artifact: #dfdfe3;
+  --col-ui-artifact: #b4b4bc;
 
 
 
@@ -189,7 +189,7 @@ button {
     height : 80vh; padding-top:10vh;
     display: block;
   }
-  #mobile-nav-dialog{
+  .nav-dialog{
     background-image: linear-gradient(var(--col-dark-1-transparent), var(--col-dark-2-transparent));
     overflow        : hidden;
     display         : flex;
@@ -198,7 +198,12 @@ button {
     align-content   : center;
     justify-content : center;
     align-items     : center;
+    margin: 0; 
+    padding: 0;
+    max-width: 100vw; 
+    max-height: 100vh;
   }
+  
   nav a              {margin-top:10px;}
   nav a:focus-visible{outline:none;   }
 }

@@ -40,6 +40,7 @@ export function makeNav(){
 
     const modal         = document.createElement("dialog");
     modal.id            = "mobile-nav-dialog";
+    modal.classList.add("nav-dialog");
     modal.style.display = "none";
     modal.appendChild(nav);
     document.body.appendChild(modal);
