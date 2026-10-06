@@ -99,8 +99,7 @@ nav a.nav-home {
   transition   : opacity 0.2s;
   filter       : none !important;
 }
-nav a.nav-home:hover { opacity: 1; cursor: pointer; }
-nav a.nav-home svg   { width: 2em; height: 2em; }
+
 nav a, button {
   --border-natural-size: 48px;
   --border-half-size   : 24px;
@@ -126,11 +125,11 @@ nav a, button {
   line-height : --height;
   &:hover{
     filter      : saturate(1.0) contrast(1.2) drop-shadow(0px 3px 9px black);
-    text-shadow : 0px 3px 10px var(--col-dark-2-transparent);
     color       : var(--col-dark-1);
     z-index     : 2;
-    transition  : 0.2s;
-    cursor      : pointer;
+    transition: 0.1s;
+    cursor: pointer;
+    transform: scale(1.025);
   }
 }
 .ui-artifact, button{
@@ -186,7 +185,8 @@ button {
   }
   nav{/*See nav.js for how this works - its pushed into a modal*/
     width  : 100vw;
-    height : 80vh; padding-top:10vh;
+    height : 80vh; 
+    padding-top:10vh;
     display: block;
   }
   .nav-dialog{
