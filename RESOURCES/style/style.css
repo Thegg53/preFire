@@ -133,12 +133,42 @@ nav a, button {
     cursor      : pointer;
   }
 }
-.ui-artifact, button{border-image-source : url("../img/ui/artifact.webp" );background-color: var(--col-ui-artifact );}
-.ui-white           {border-image-source : url("../img/ui/white.webp"    );background-color: var(--col-ui-white    );}
-.ui-blue            {border-image-source : url("../img/ui/blue.webp"     );background-color: var(--col-ui-blue     );}
-.ui-black           {border-image-source : url("../img/ui/black.webp"    );background-color: var(--col-ui-black    );}
-.ui-red             {border-image-source : url("../img/ui/red.webp"      );background-color: var(--col-ui-red      );}
-.ui-green           {border-image-source : url("../img/ui/green.webp"    );background-color: var(--col-ui-green    );}
+.ui-artifact, button{
+  border-image-source: url("../img/ui/artifact.webp" );
+  border-image-repeat: stretch; 
+  background-color: var(--col-ui-artifact );
+}
+
+.ui-white           {
+  border-image-source: url("../img/ui/white.webp");
+  border-image-repeat: stretch; 
+  background-color: var(--col-ui-white);
+}
+
+.ui-blue            {
+  border-image-source: url("../img/ui/blue.webp");
+  border-image-repeat: stretch; 
+  background-color: var(--col-ui-blue);
+}
+
+.ui-black           {
+  border-image-source: url("../img/ui/black.webp");
+  border-image-repeat: stretch; 
+  background-color: var(--col-ui-black);
+}
+
+.ui-red             {
+  border-image-source: url("../img/ui/red.webp");
+  border-image-repeat: stretch; 
+  background-color: var(--col-ui-red);
+}
+
+.ui-green           {
+  border-image-source: url("../img/ui/green.webp");
+  border-image-repeat: stretch; 
+  background-color: var(--col-ui-green);
+}
+
 button {
   margin-block: 15px;
   height: 70px;

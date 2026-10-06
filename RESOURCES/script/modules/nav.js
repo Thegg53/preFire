@@ -1,8 +1,8 @@
 export function makeNav(){
   const discordLink = "https://discord.gg/P7bV8ttzgT";
-  const colors      = ["white", "blue", "black", "red", "green" ];
-  const pages       = ["Rules",  "Legal Cards","Decks", "More Resources" , "About"];
-  const fileNames   = ["rules",  "legality", "decks", "more-resources", "about"];
+  const colors      = ["artifact", "white", "blue", "black", "red", "green" ];
+  const pages       = ["Home", "Rules",  "Legal Cards", "Decks", "More Resources", "About"];
+  const fileNames   = ["index",  "rules",  "legality", "decks", "more-resources", "about"];
   const header      = document.querySelector("header");
   const footer      = document.querySelector("footer");
   const nav         = document.createElement("nav");
@@ -10,18 +10,6 @@ export function makeNav(){
 
 
   header.appendChild(nav);
-
-  const homeLink = document.createElement("a");
-  homeLink.href  = "index.html";
-  homeLink.title = "Home";
-  homeLink.classList.add("nav-home");
-  const homeIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  homeIcon.setAttribute("viewBox", "0 0 24 24");
-  homeIcon.setAttribute("fill", "currentColor");
-  homeIcon.innerHTML = '<path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>';
-  homeLink.appendChild(homeIcon);
-  nav.appendChild(homeLink);
-  footer.appendChild(homeLink.cloneNode(true));
 
   pages.forEach((pageName, index)=>{
     const a        = document.createElement("a");
