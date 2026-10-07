@@ -71,13 +71,13 @@ a{
   cursor: pointer;
 }
 
-
-
 .glowOnHover:hover{
   transform :scale(1.1); 
   filter    :drop-shadow(0px 0px 5px white);
   cursor    :pointer;
 }
+
+
 
 .site-header {
   background-color    : black;
@@ -199,18 +199,30 @@ button {
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center; 
     justify-content: center; 
-    box-shadow: 0px 5px 5px 5px black
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.75);
   }
+
+  .mobile-nav-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 0;
+  }
+
   #mobile-hamburger-icon{ 
-    width: 100%; 
-    background-color: black; 
+    max-width: 100%; 
   }
+
   nav{/*See nav.js for how this works - its pushed into a modal*/
     width  : 100vw;
     height : 80vh; 
     padding-top:10vh;
     display: block;
   }
+
   .nav-dialog{
     background-image: linear-gradient(var(--col-dark-1-transparent), var(--col-dark-2-transparent));
     overflow        : hidden;

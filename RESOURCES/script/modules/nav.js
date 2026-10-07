@@ -33,10 +33,22 @@ export function makeNav(){
 
     
   if (isMobile) {
+    const navButton = document.createElement("button");
+    navButton.ariaLabel = "Open Navigation Menu";
+    navButton.id        = "mobile-nav-button";
+    navButton.classList.add("mobile-nav-btn");
+    navButton.ariaExpanded = "false";
+    navButton.addEventListener("click", () => {
+      const isExpanded = navButton.getAttribute("aria-expanded") === "true";
+      navButton.setAttribute("aria-expanded", !isExpanded);
+      
+    });
+
     const hamburger = document.createElement("img");
     hamburger.src   = "RESOURCES/img/ui/hamburger.webp";
     hamburger.id    = "mobile-hamburger-icon";
-    nav.before(hamburger);
+    navButton.appendChild(hamburger);
+    nav.before(navButton);
 
     const modal         = document.createElement("dialog");
     modal.id            = "mobile-nav-dialog";
