@@ -79,6 +79,25 @@ a{
   cursor    :pointer;
 }
 
+.site-header {
+  background-color    : black;
+  padding: 20px;
+}
+
+.site-header-link {
+  display: inline-block;
+  width: max-content;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
+.site-header-logo {
+  display: inline-block;
+  color: #fff;
+  padding: 0;
+  background-color: transparent;
+}
+
 nav {
   width: 100vw; overflow: visible;
   display              : grid;
@@ -175,8 +194,11 @@ button {
 }
 
 @media only screen and (max-width:1000px){
-  header{
-    display   : grid; grid-template-columns:80% 20%; 
+  .site-header {
+    display   : grid; 
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center; 
+    justify-content: center; 
     box-shadow: 0px 5px 5px 5px black
   }
   #mobile-hamburger-icon{ 
