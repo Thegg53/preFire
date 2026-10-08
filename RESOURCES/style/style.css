@@ -81,7 +81,7 @@ a{
 
 .site-header {
   background-color    : black;
-  padding: 20px;
+  padding: 15px 20px 15px 30px;
 }
 
 .site-header-link {
@@ -99,31 +99,17 @@ a{
 }
 
 nav {
-  width: 100vw; overflow: visible;
-  display              : grid;
-  grid-template-columns: 10% repeat(var(--nav-items), var(--nav-item-width));
+  width: 100vw; 
+  overflow: visible;
+  display: grid;
   background-image: linear-gradient(#000000, transparent);
-}
-nav a.nav-home {
-  border       : none !important;
-  border-image : none !important;
-  background   : none !important;
-  width        : 100% !important;
-  margin       : 0    !important;
-  display      : flex;
-  align-items  : center;
-  justify-content: center;
-  color        : white;
-  opacity      : 0.7;
-  transition   : opacity 0.2s;
-  filter       : none !important;
 }
 
 nav a, button {
   --border-natural-size: 48px;
   --border-half-size   : 24px;
   display: inline-block;
-  width: calc(80% - var(--border-natural-size)); margin-inline: 10%;
+  /*width: calc(80% - var(--border-natural-size)); margin-inline: 10%; */
   
   border              : var(--border-half-size) solid transparent;
   border-image        : url(border.png) 33 round;
@@ -151,6 +137,54 @@ nav a, button {
     transform: scale(1.025);
   }
 }
+
+.mobile-nav-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 0;
+}
+
+#mobile-hamburger-icon{ 
+  max-width: 100%; 
+}
+
+.nav-dialog{
+  background-image: linear-gradient(var(--col-dark-1-transparent), var(--col-dark-2-transparent));
+  overflow        : hidden;
+  margin: 0; 
+  padding: 0;
+  width:100%;
+  max-width: 100vw; 
+  max-height: 100vh;
+}
+
+.nav-dialog-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+}
+
+.nav-close-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 40px;
+  color: var(--col-lightest);
+  cursor: pointer;
+  transition: color 0.3s;
+  margin-block: unset;
+  width: auto;
+  height: auto;
+  padding: 0 10px;
+}
+
+.nav-close-btn:hover {
+  color: #fff;
+}
+
 .ui-artifact, button{
   border-image-source: url("../img/ui/artifact.webp" );
   border-image-repeat: stretch; 
@@ -202,44 +236,14 @@ button {
     box-shadow: 0px 3px 10px rgba(0,0,0,0.75);
   }
 
-  .mobile-nav-btn {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
-    width: 50px;
-    height: 50px;
-    border-radius: 0;
-  }
-
-  #mobile-hamburger-icon{ 
-    max-width: 100%; 
-  }
-
   nav{/*See nav.js for how this works - its pushed into a modal*/
-    width  : 100vw;
-    height : 80vh; 
-    padding-top:10vh;
-    display: block;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    background-image: none;
+    padding: 0 30px 40px;
   }
-
-  .nav-dialog{
-    background-image: linear-gradient(var(--col-dark-1-transparent), var(--col-dark-2-transparent));
-    overflow        : hidden;
-    display         : flex;
-    flex-wrap       : wrap;
-    flex-direction  : row;
-    align-content   : center;
-    justify-content : center;
-    align-items     : center;
-    margin: 0; 
-    padding: 0;
-    max-width: 100vw; 
-    max-height: 100vh;
-  }
-  
-  nav a              {margin-top:10px;}
-  nav a:focus-visible{outline:none;   }
 }
 
 footer {

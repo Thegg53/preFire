@@ -53,17 +53,21 @@ export function makeNav(){
     const modal         = document.createElement("dialog");
     modal.id            = "mobile-nav-dialog";
     modal.classList.add("nav-dialog");
-    modal.style.display = "none";
     modal.appendChild(nav);
     document.body.appendChild(modal);
 
-    const closer = document.createElement("a");
-    closer.innerText = "Back";
-    closer.classList.add(`ui-artifact`);
-    nav.appendChild(closer);
+    const modalHeader = document.createElement("div");
+    modalHeader.classList.add("nav-dialog-header");
+    modal.appendChild(modalHeader);
 
-    const openMobileDialog = () => { modal.style.display = "flex";  modal.showModal(); };
-    const shutMobileDialog = () => { modal.style.display = "none";  modal.close();     }; 
+    const closer = document.createElement("button");
+    closer.innerHTML = "&times;";
+    closer.classList.add(`nav-close-btn`);
+    modalHeader.appendChild(closer);
+    modal.prepend(modalHeader);
+
+    const openMobileDialog = () => { modal.showModal(); };
+    const shutMobileDialog = () => { modal.close();     }; 
     hamburger.addEventListener("click", openMobileDialog);
     closer.addEventListener   ("click", shutMobileDialog);
   }
