@@ -1,6 +1,6 @@
 :root{
 
-  --nav-items: 5;
+  --nav-items: 6;
   --nav-item-width: calc(90% / var(--nav-items));
 
   --col-white: #fbfcc2; --col-ui-white: #f3f2ef;
@@ -80,6 +80,10 @@ a{
 
 
 .site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
   background-color    : black;
   padding: 15px 20px 15px 30px;
 }
@@ -99,17 +103,18 @@ a{
 }
 
 nav {
-  width: 100vw; 
+  flex: 1 1 auto;
   overflow: visible;
   display: grid;
+  width: 100%;
+  grid-template-columns: repeat(var(--nav-items), auto);
+  column-gap: 15px;
   background-image: linear-gradient(#000000, transparent);
 }
 
 nav a, button {
   --border-natural-size: 48px;
   --border-half-size   : 24px;
-  display: inline-block;
-  /*width: calc(80% - var(--border-natural-size)); margin-inline: 10%; */
   
   border              : var(--border-half-size) solid transparent;
   border-image        : url(border.png) 33 round;
