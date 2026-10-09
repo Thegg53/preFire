@@ -6,10 +6,29 @@ export function makeNav(){
   const header      = document.querySelector("header");
   const footer      = document.querySelector("footer");
   const nav         = document.createElement("nav");
-  const isMobile    = window.innerWidth <= 1000; 
-
+  const MOBILE_WIDTH = 1000;
+  let isMobile = false;
+  const resizeObserver = new ResizeObserver(entries => {
+    for (let entry of entries) {
+      const width = entry.contentRect.width;
+      if (width <= MOBILE_WIDTH) {
+        isMobile = true;
+        switchToMobileNav(); 
+      } else {
+        isMobile = false;
+        const mobileNavButton = document.getElementById("mobile-nav-button");
+        if (mobileNavButton) mobileNavButton.remove();
+        const mobileDialog = document.getElementById("mobile-nav-dialog");
+        if (mobileDialog) mobileDialog.remove();
+        header.appendChild(nav);
+      }
+    }
+  });
 
   header.appendChild(nav);
+  resizeObserver.observe(document.body);
+
+
 
   pages.forEach((pageName, index)=>{
     const a        = document.createElement("a");
@@ -31,8 +50,7 @@ export function makeNav(){
   aTag.appendChild(discordImg);
   footer.appendChild(aTag);
 
-    
-  if (isMobile) {
+  function switchToMobileNav() {
     const navButton = document.createElement("button");
     navButton.ariaLabel = "Open Navigation Menu";
     navButton.id        = "mobile-nav-button";
