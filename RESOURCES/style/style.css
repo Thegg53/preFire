@@ -10,6 +10,8 @@
   --col-green: #53b16b; --col-ui-green: #bfccc2;
   --col-ui-artifact: #b4b4bc;
 
+  --col-bg-black: rgba(0, 0, 0, 0.5);
+
 
 
   --col-regular : var(--page-color);
@@ -38,17 +40,92 @@ body{
   margin :0;
   padding:0;
   background-color: black;
-  background-image   : url("../img/backgrounds/splinter_twin.webp");
-  background-size    : cover;
-  background-repeat  : no-repeat;
+  background-image   : url("../img/backgrounds/parchment.jpg");
+  background-repeat  : repeat;
   background-position: center;
 }
-body.background_splinter_twin     {background-image:url("../img/backgrounds/splinter_twin.webp");}
+
+body.bg-artifact {
+  background-image:
+    linear-gradient(
+      to right,
+      var(--col-bg-black),
+      transparent 50%,
+      var(--col-bg-black)
+    ),
+    url("../img/backgrounds/parchment.jpg");
+}
+
+body.bg-white {
+  background-image:
+    linear-gradient(
+      to right,
+      var(--col-bg-black),
+      transparent 25%,
+      transparent 75%,
+      var(--col-bg-black)
+    ),
+    url("../img/backgrounds/parchment.jpg");
+}
+
+body.bg-blue {
+  background-image:
+    linear-gradient(
+      to right,
+      var(--col-bg-black),
+      transparent 50%,
+      var(--col-bg-black)
+    ),
+    linear-gradient(var(--col-blue)),
+    url("../img/backgrounds/parchment.jpg");
+  background-blend-mode: normal, color, normal;
+}
+
+body.bg-black {
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 0, 0.55) 50%,
+      rgba(0, 0, 0, 0.85)
+    ),
+    linear-gradient(#3c1d74),
+    url("../img/backgrounds/parchment.jpg");
+  background-blend-mode: normal, color, normal;
+}
+
+body.bg-red {
+  background-image:
+    linear-gradient(
+      to right,
+      var(--col-bg-black),
+      transparent 50%,
+      var(--col-bg-black)
+    ),
+    linear-gradient(var(--col-red)),
+    url("../img/backgrounds/parchment.jpg");
+  background-blend-mode: normal, color-burn, normal;
+}
+
+body.bg-green {
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.35) 50%,
+      rgba(0, 0, 0, 0.75)
+    ),
+    linear-gradient(#45c064),
+    url("../img/backgrounds/parchment.jpg");
+  background-blend-mode: normal, color, normal;
+}
+
+/* body.background_splinter_twin     {background-image:url("../img/backgrounds/splinter_twin.webp");}
 body.background_birthing_pod      {background-image:url("../img/backgrounds/birthing_pod.webp");}
 body.background_mox_opal          {background-image:url("../img/backgrounds/mox_opal.webp");}
 body.background_faithless_looting {background-image:url("../img/backgrounds/faithless_looting.webp");}
 body.background_tarmogoyf         {background-image:url("../img/backgrounds/tarmogoyf.webp");}
-body.background_noble_hierarch    {background-image:url("../img/backgrounds/noble_hierarch.webp");}
+body.background_noble_hierarch    {background-image:url("../img/backgrounds/noble_hierarch.webp");} */
 
 main { min-height: 100vh; }
 
