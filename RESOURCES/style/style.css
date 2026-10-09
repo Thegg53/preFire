@@ -56,7 +56,8 @@ body.bg-artifact {
     linear-gradient(
       to right,
       var(--col-bg-black),
-      transparent 50%,
+      transparent 40%,
+      transparent 60%,
       var(--col-bg-black)
     ),
     linear-gradient(#dedebb),
@@ -69,12 +70,14 @@ body.bg-white {
     linear-gradient(
       to right,
       rgba(0, 0, 0, 0.3),
-      transparent 50%,
+      transparent 40%,
+      transparent 60%,
       rgba(0, 0, 0, 0.3)
     ),
-    linear-gradient(#dfdfd5),
+    linear-gradient(rgba(255, 255, 255, 0.6)),
+    linear-gradient(#fdfdc7),
     url("../img/backgrounds/parchment.jpg");
-    background-blend-mode: normal, color, normal
+    background-blend-mode: normal, normal, color, normal
 }
 
 body.bg-blue {
@@ -82,7 +85,8 @@ body.bg-blue {
     linear-gradient(
       to right,
       var(--col-bg-black),
-      transparent 50%,
+      transparent 40%,
+      transparent 60%,
       var(--col-bg-black)
     ),
     linear-gradient(var(--col-blue)),
@@ -95,7 +99,8 @@ body.bg-black {
     linear-gradient(
       to right,
       rgba(0, 0, 0, 0.85),
-      rgba(0, 0, 0, 0.55) 50%,
+      rgba(0, 0, 0, 0.55) 40%,
+      rgba(0, 0, 0, 0.55) 60%,
       rgba(0, 0, 0, 0.85)
     ),
     linear-gradient(#3c1d74),
@@ -108,7 +113,8 @@ body.bg-red {
     linear-gradient(
       to right,
       var(--col-bg-black),
-      transparent 50%,
+      transparent 40%,
+      transparent 60%,
       var(--col-bg-black)
     ),
     linear-gradient(var(--col-red)),
@@ -121,7 +127,8 @@ body.bg-green {
     linear-gradient(
       to right,
       rgba(0, 0, 0, 0.75),
-      rgba(0, 0, 0, 0.35) 50%,
+      rgba(0, 0, 0, 0.35) 40%,
+      rgba(0, 0, 0, 0.35) 60%,
       rgba(0, 0, 0, 0.75)
     ),
     linear-gradient(#45c064),
