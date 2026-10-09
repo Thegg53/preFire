@@ -53,19 +53,22 @@ body.bg-artifact {
       transparent 50%,
       var(--col-bg-black)
     ),
+    linear-gradient(#dedebb),
     url("../img/backgrounds/parchment.jpg");
+    background-blend-mode: normal, color, normal
 }
 
 body.bg-white {
   background-image:
     linear-gradient(
       to right,
-      var(--col-bg-black),
-      transparent 25%,
-      transparent 75%,
-      var(--col-bg-black)
+      rgba(0, 0, 0, 0.3),
+      transparent 50%,
+      rgba(0, 0, 0, 0.3)
     ),
+    linear-gradient(#dfdfd5),
     url("../img/backgrounds/parchment.jpg");
+    background-blend-mode: normal, color, normal
 }
 
 body.bg-blue {
