@@ -76,7 +76,7 @@
     }
 
     .download-container {
-      margin-top: 5px;;
+      padding: 20px 0;
       display: grid;
       grid-template-columns: 50% 50%;
       button { width: 98%; margin: 1%}
@@ -88,6 +88,10 @@
       margin-right: 5px;
       vertical-align: middle;
       filter: invert(100%);
+    }
+
+    .deck ul {
+      padding-inline-start: 20px;
     }
   </style>
 
@@ -104,22 +108,26 @@
       <!-- DECKS SECTION -->
       <section>
         <h2>PreFIRE Decks</h2>
-        <p>Jump right into the fray with any of these ready-to-play PreFIRE decks!</p>
-        <span id="preview-target" class="splitMob splitMob-6"></span>
-        <span class="splitMob splitMob-2">
-          <span   id="premadeDecks"></span>
-        </span>
+        <div class="section-content">
+          <p>Jump right into the fray with any of these ready-to-play PreFIRE decks!</p>
+          <span id="preview-target" class="splitMob splitMob-6"></span>
+          <span class="splitMob splitMob-2">
+            <span   id="premadeDecks"></span>
+          </span>
+        </div>
       </section>
 
       <section>
         <h2>Decklist</h2>
-        <span id="decklist" class="splitMob"></span>
+        <div class="section-content"><span id="decklist" class="splitMob"></span></div>
       </section>
 
-        <section>
+      <section>
         <h2>Event Results:</h2>
-        <p>Check out the latest results from recent PreFIRE events!</p>
-        <a href="https://www.tcdecks.net/format.php?format=Prefire" target="_blank">TCDecks Event Results</a>
+        <div class="section-content">
+          <p>Check out the latest results from recent PreFIRE events!</p>
+          <a href="https://www.tcdecks.net/format.php?format=Prefire" target="_blank">TCDecks Event Results</a>
+        </div>
       </section>
 
     </main>

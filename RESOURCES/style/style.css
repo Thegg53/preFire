@@ -32,6 +32,12 @@
   src: url("../font/Beleren.ttf") format("truetype");
 }
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 html{
   width: 100vw;
   overflow-x: hidden;
@@ -130,13 +136,19 @@ body.background_faithless_looting {background-image:url("../img/backgrounds/fait
 body.background_tarmogoyf         {background-image:url("../img/backgrounds/tarmogoyf.webp");}
 body.background_noble_hierarch    {background-image:url("../img/backgrounds/noble_hierarch.webp");} */
 
-main { min-height: 100vh; }
+main { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+  min-height: 100vh; 
+  padding: 30px 20px 50px
+}
 
 h1, h2, h3, h4{
     font-family     : Beleren;
     letter-spacing  : 1px;
-    padding-block   : 10px;
-    padding-left    : 5px;
+    padding: 10px 20px;
     margin          : 0px; 
     background-color: black;
     color: #555555;
@@ -308,7 +320,7 @@ nav a, button {
 
 button {
   margin-block: 15px;
-  height: 70px;
+  min-height: 70px;
   line-height: 1em;
 }
 
@@ -372,39 +384,31 @@ footer a>img {
 ::-webkit-scrollbar-thumb       { background: var(--col-red-normal);  border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--col-red-light );                       }
 
-@keyframes fadein{
-  0%   { opacity: 0.5}
-  100% { opacity: 1} 
-}
 section {
-  --border-width: 5px
-  animation       : 0.5s forwards fadein linear;
-  width           : calc(80% - calc(var(--border-width) * 2)); margin-inline: 10%;
-  margin-block    : 20px;
-  padding-bottom  : 55px; 
+  --border-width: 5px;
   background-image: linear-gradient(var(--col-dark-1-transparent), var(--col-dark-2-transparent));
   border          : 5px solid var(--col-darker);
   border-radius   : 2px 2px 10% 10%;
   box-shadow      : 0px 0px 1px 2px inset var(--col-dark-1), 0px 2px 8px 2px var(--col-dark-1);
+  width: calc(100% - 40px);
+  max-width: 900px;
 }
-@media only screen and (max-width:1000px){ section{ 
-  width: calc(98% - 10px); margin-inline: 1%;
-}}
 
-section h2{
+section h2, section h3{
   font-family     : Beleren;
-  width           : 96%; padding-inline: 2%;
-  padding-block   : 1%;
   margin          : 0;
   background-image: linear-gradient(var(--col-dark-1), var(--col-dark-2));
   color           : var(--col-lighter);
   box-shadow      : 0px 0px 1px 4px inset var(--col-dark-1);
 }
 
+.section-content {
+  padding  : 20px 20px 55px; 
+}
+
 section p, section li{
   font-family   : Arial, Helvetica, sans-serif;
   color         : var(--col-lightest);
-  width         : 96%; padding-inline: 2%;
   margin-bottom : 5px;
 }
 
@@ -485,9 +489,7 @@ section p, section li{
 }
 
 textarea#validator {
-  width           : 96%;
-  margin-inline   : 2%;
-  margin-block    : 15px;
+  width           : 100%;
   padding         : 12px;
   min-height      : 300px;
   font-family     : monospace;

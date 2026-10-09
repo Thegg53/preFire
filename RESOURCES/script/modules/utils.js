@@ -21,6 +21,7 @@ export function elementWithText(elementType, text) {
 
 export function makeDownloadLink (fileName, content, text="Download") {
   const element = elementWithText("button", text);
+  addPageColorClass(element);
   element.addEventListener("click", () => {
     const link    = document.createElement("a");
     link.href     = URL.createObjectURL(new Blob([content], { type: 'text/plain' }));
@@ -36,6 +37,7 @@ export function makeDownloadLink (fileName, content, text="Download") {
 
 export function makeClipboardLink(content, text = "Clipboard") {
   const element = elementWithText("button", text);
+  addPageColorClass(element);
   element.addEventListener("click", async () => { try {
     await navigator.clipboard.writeText(content);
     const original = element.innerText;
@@ -43,5 +45,14 @@ export function makeClipboardLink(content, text = "Clipboard") {
     setTimeout(() => { element.innerText = original; }, 2000);
     } catch (err) { console.error("Failed to copy:", err); }
   });
+  return element;
+}
+
+function addPageColorClass(element) {
+  const theme = [...document.body.classList]
+    .find(className => className.startsWith("bg-"))
+    ?.slice(3);
+
+  if (theme) element.classList.add(`ui-${theme}`);
   return element;
 }
