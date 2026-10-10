@@ -54,7 +54,7 @@
     .deckbox {
       box-shadow: 0px 0px 5px 1px var(--col-darker);
       outline: 1px solid black;
-      height: 200px;
+      aspect-ratio: 1 / 1;
       background-position: center; 
       background-size    : cover;
       overflow: hidden;
@@ -75,6 +75,23 @@
       text-shadow: 0px 2px 3px black;
     }
 
+    .deck-bg-twin {
+      background-position: 46% 0%;
+      background-size: 160%;
+    }
+
+    .deck-bg-dredge {
+      background-position: 30% 50%;
+    }
+
+    .deck-bg-jund {
+      background-position: 60% 50%;
+    }
+
+    .deck-bg-storm {
+      background-position: 10% 50%;
+    }
+
     .download-container {
       padding: 20px 0;
       display: grid;
@@ -92,6 +109,54 @@
 
     .deck ul {
       padding-inline-start: 20px;
+    }
+
+    @media only screen and (max-width: 1000px) {
+      .deckbox {
+        aspect-ratio: unset;
+        height: 200px;
+      }
+      .deck-bg-affinity {
+        background-position: 50% 39%;
+      }
+
+      .deck-bg-humans {
+        background-position: 50% 17%;
+      }
+
+      .deck-bg-twin {
+        background-position: 50% 
+        0%;
+        background-size: cover;
+      }
+
+      .deck-bg-twin {
+        background-position: 50% 0%;
+      }
+
+      .deck-bg-pod {
+        background-position: 0% 35%;
+      }
+
+      .deck-bg-dredge {
+        background-position: 50% 80%;
+      }
+
+      .deck-bg-tron {
+        background-position: 30% 25%;
+      }
+
+      .deck-bg-uw-control {
+        background-position: 50% 15%;
+      }
+
+      .deck-bg-titan {
+        background-position: 50% 15%;
+      }
+
+      .deck-bg-shadow {
+        background-position: 50% 10%;
+      }
     }
   </style>
 

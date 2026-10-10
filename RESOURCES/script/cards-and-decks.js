@@ -37,7 +37,7 @@ function makeSearchImages(kvp, deckData) {
     const title     = elementWithText("h3", deckName);
     container.appendChild(title);
     container.style.backgroundImage = `url("./RESOURCES/img/deckbox/${card}.png")`;
-    container.classList.add("card", "glowOnHover", "deckbox");
+    container.classList.add("card", "glowOnHover", "deckbox", `deck-bg-${deckName.toLowerCase().replaceAll(" ", "-")}`);
     target.appendChild(container);
 
     container.addEventListener("click", () => {
