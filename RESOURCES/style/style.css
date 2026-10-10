@@ -187,6 +187,7 @@ a{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   row-gap: 10px;
   background-color    : black;
   padding: 15px 20px 15px 30px;
@@ -211,6 +212,7 @@ nav {
   grid-template-columns: repeat(var(--nav-items), auto);
   column-gap: 15px;
   background-image: linear-gradient(#000000, transparent);
+  max-width: 1900px;
 }
 
 nav a, button, .button {
@@ -241,23 +243,6 @@ nav a, button, .button {
     transition: 0.1s;
     cursor: pointer;
     transform: scale(1.025);
-  }
-}
-
-@media only screen and (min-width: 1600px) {
-  .site-header {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  nav {
-    flex: 0 1 auto;
-    width: max-content;
-  }
-
-  nav a {
-    width: max-content;
-    padding: 0 30px;
   }
 }
 
@@ -330,6 +315,10 @@ nav a, button, .button {
   border-image-source: url("../img/ui/black.webp");
   border-image-repeat: stretch; 
   background-color: var(--col-ui-black);
+
+  &:hover {
+    filter: saturate(1.5) contrast(1.01) brightness(1.1) drop-shadow(0px 3px 9px black) !important;
+  }
 }
 
 .ui-red             {
