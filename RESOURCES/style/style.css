@@ -191,13 +191,10 @@ a{
   width: max-content;
   text-decoration: none;
   padding: 10px 0;
-}
-
-.site-header-logo {
-  display: inline-block;
   color: #fff;
-  padding: 0;
-  background-color: transparent;
+  font-family: Beleren;
+  font-size: 1.5em;
+  letter-spacing: 1px;
 }
 
 nav {
