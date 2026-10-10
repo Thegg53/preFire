@@ -2,7 +2,7 @@ import { banlist             } from "../data/lists/banlist.js"
 import { watchlist           } from "../data/lists/watchlist.js"
 import { makeNav             } from "./modules/nav.js"
 import { cardImageWithDesc   } from "./modules/drawCards.js"
-import { addPreviewToElementFromCardName } from "./modules/card3d.js"
+import { addPreviewToElementFromCardName } from "./modules/drawCards.js"
 import setIcons from "../img/set_icons/setIcons.js";
 
 

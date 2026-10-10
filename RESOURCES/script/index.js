@@ -1,6 +1,5 @@
 import { makeNav             } from "./modules/nav.js"
-import { addPreviewToElementFromCardName } from "./modules/card3d.js"
-import { cardImage } from "./modules/drawCards.js"
+import { addPreviewToElementFromCardName, cardImage } from "./modules/drawCards.js"
 
 makeNav();
 const containerElement = document.getElementById("image-container-pillars");
