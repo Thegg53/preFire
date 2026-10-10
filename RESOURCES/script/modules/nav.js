@@ -12,15 +12,9 @@ export function makeNav(){
     for (let entry of entries) {
       const width = entry.contentRect.width;
       if (width <= MOBILE_WIDTH) {
-        isMobile = true;
         switchToMobileNav(); 
       } else {
-        isMobile = false;
-        const mobileNavButton = document.getElementById("mobile-nav-button");
-        if (mobileNavButton) mobileNavButton.remove();
-        const mobileDialog = document.getElementById("mobile-nav-dialog");
-        if (mobileDialog) mobileDialog.remove();
-        header.appendChild(nav);
+        switchToDesktopNav();
       }
     }
   });
@@ -50,7 +44,22 @@ export function makeNav(){
   aTag.appendChild(discordImg);
   footer.appendChild(aTag);
 
+  function switchToDesktopNav() {
+    if (!isMobile) { return };
+    
+    isMobile = false;
+    const mobileNavButton = document.getElementById("mobile-nav-button");
+    mobileNavButton?.remove();
+    const mobileDialog = document.getElementById("mobile-nav-dialog");
+    mobileDialog?.remove();
+    header.appendChild(nav);
+  }
+
   function switchToMobileNav() {
+    if (isMobile) { return };
+
+    isMobile = true;
+
     const navButton = document.createElement("button");
     navButton.ariaLabel = "Open Navigation Menu";
     navButton.id        = "mobile-nav-button";

@@ -60,7 +60,7 @@ body.bg-artifact {
       transparent 60%,
       var(--col-bg-black)
     ),
-    linear-gradient(#dedebb),
+    linear-gradient(#baad95),
     url("../img/backgrounds/parchment.jpg");
     background-blend-mode: normal, color, normal
 }
