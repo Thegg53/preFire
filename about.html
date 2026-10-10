@@ -19,32 +19,38 @@
 
     <meta name='viewport'           content='width=device-width, initial-scale=1'/>
     <meta name="description"        content="About PreFIRE Modern — the community retro MTG format.">
-    <style>:root{--page-color:var(--col-white);}</style>
+    <style>:root{--page-color:var(--col-green);}</style>
     <script defer src="RESOURCES/script/index.js" type="module"></script>
   </head>
 
-  <body class="background_tarmogoyf">
-    <header><h1>PreFIRE</h1></header>
+  <body class="bg-green">
+    <header class="site-header">
+      <a href="/" class="site-header-link">
+        PreFIRE
+      </a>
+    </header>
     <main>
-
+      <h1>About</h1>
       <section>
         <h2>Open Source</h2>
-        <p>
-          This website is fully open source. The source code, decklists, ban list, event listings, and card data are all maintained publicly on GitHub.
-          <br><br>
-          Anyone is welcome to contribute — whether that means submitting a new deck, reporting a bug, suggesting a card for the watchlist, or improving the site itself.
-        </p>
-        <h3>How to Contribute</h3>
-        <p>All contributions are made through the GitHub repository. Here's what you can do without any coding knowledge:</p>
-        <ul>
-          <li><strong>This isnt working at the moment, due to github workflows and such. For now, edit RESOURCES/data/lists/decks.json  Add or update a decklist</strong> — Add a <code>.txt</code> file to <code>INPUT/decklists/</code> following the format in the README. A GitHub Action will automatically process it.</li>
-          <li><strong>Suggest a ban or watchlist change</strong> — Edit <code>INPUT/banlists/banlist.js</code> or <code>INPUT/banlists/watchlist.js</code> and open a pull request.</li>
-          <li><strong>Submit an event</strong> — Add an entry to <code>INPUT/eventlist/events.txt</code> following the format in the README.</li>
-          <li><strong>Report a bug or suggest a feature</strong> — Open an issue on the GitHub repository.</li>
-        </ul>
-        <br>
-        <p>This site is a fork of the original work by <a href="https://github.com/mikamikaDE" target="_blank">mikamikaDE</a>.</p>
-        <a href="https://github.com/Thegg53/preFire" target="_blank"><button>View on GitHub</button></a>
+        <div class="section-content">
+          <p>
+            This website is fully open source. The source code, decklists, ban list, event listings, and card data are all maintained publicly on GitHub.
+            <br><br>
+            Anyone is welcome to contribute — whether that means submitting a new deck, reporting a bug, suggesting a card for the watchlist, or improving the site itself.
+          </p>
+          <h3>How to Contribute</h3>
+          <p>All contributions are made through the GitHub repository. Here's what you can do without any coding knowledge:</p>
+          <ul>
+            <li><strong>This isnt working at the moment, due to github workflows and such. For now, edit RESOURCES/data/lists/decks.json  Add or update a decklist</strong> — Add a <code>.txt</code> file to <code>INPUT/decklists/</code> following the format in the README. A GitHub Action will automatically process it.</li>
+            <li><strong>Suggest a ban or watchlist change</strong> — Edit <code>INPUT/banlists/banlist.js</code> or <code>INPUT/banlists/watchlist.js</code> and open a pull request.</li>
+            <li><strong>Submit an event</strong> — Add an entry to <code>INPUT/eventlist/events.txt</code> following the format in the README.</li>
+            <li><strong>Report a bug or suggest a feature</strong> — Open an issue on the GitHub repository.</li>
+          </ul>
+          <br>
+          <p>This site is a fork of the original work by <a href="https://github.com/mikamikaDE" target="_blank">mikamikaDE</a>.</p>
+          <a href="https://github.com/Thegg53/preFire" target="_blank" class="ui-green button">View on GitHub</a>
+        </div>
       </section>
 
     </main>
