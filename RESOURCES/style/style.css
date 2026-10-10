@@ -213,7 +213,7 @@ nav {
   background-image: linear-gradient(#000000, transparent);
 }
 
-nav a, button {
+nav a, button, .button {
   --border-natural-size: 48px;
   --border-half-size   : 24px;
   
@@ -344,7 +344,8 @@ nav a, button {
   background-color: var(--col-ui-green);
 }
 
-button {
+button, .button {
+  display: inline-block;
   margin-block: 15px;
   min-height: 70px;
   line-height: 1em;
@@ -430,14 +431,22 @@ section h3 {
   margin          : 0;
   color           : var(--col-lighter);
 }
-s
+
 section h2 {
   background-image: linear-gradient(var(--col-dark-1), var(--col-dark-2));
   box-shadow      : 0px 0px 1px 4px inset var(--col-dark-1);
 }
 
+section h3 {
+  padding: 10px 0;
+}
+
 .section-content {
   padding  : 20px 20px 55px; 
+}
+
+section ul {
+  padding-inline-start: 20px;
 }
 
 section p, section li{
