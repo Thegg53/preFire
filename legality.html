@@ -45,6 +45,14 @@
       padding: 0;
     }
 
+    .card-grid {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      column-gap: 20px;
+      row-gap: 30px;
+      max-width: 1450px;
+      margin: 0 auto;
+    }
+
     .set-item {
       display: flex;
       box-sizing: border-box;
@@ -110,7 +118,7 @@
         <h2>PreFIRE Modern Banlist</h2>
         <div class="section-content">
           <p>The following cards are banned in PreFIRE:</p>
-          <div class="enforcedGrid enforcedGrid-10 mobile-only-enforceGrid-5" id="banlist"></div>
+          <div class="enforcedGrid card-grid" id="banlist"></div>
         </div>
       </section>
 
@@ -118,7 +126,7 @@
         <h2>PreFIRE Modern Watchlist</h2>
         <div class="section-content">
           <p>The cards on this watchlist aren’t currently banned, but are being closely monitored for potential issues. This list will expand or shrink as the format develops.</p>
-          <div class="enforcedGrid enforcedGrid-10 mobile-only-enforceGrid-5" id="watchlist"></div>
+          <div class="enforcedGrid card-grid" id="watchlist"></div>
         </div>
       </section>
 
