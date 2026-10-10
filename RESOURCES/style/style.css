@@ -242,6 +242,23 @@ nav a, button {
   }
 }
 
+@media only screen and (min-width: 1600px) {
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  nav {
+    flex: 0 1 auto;
+    width: max-content;
+  }
+
+  nav a {
+    width: max-content;
+    padding: 0 30px;
+  }
+}
+
 .mobile-nav-btn {
   background-color: transparent;
   border: none;
