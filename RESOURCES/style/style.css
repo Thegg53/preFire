@@ -149,7 +149,7 @@ main {
   align-items: center;
   row-gap: 20px;
   min-height: 100vh; 
-  padding: 30px 20px 50px
+  padding: 30px 40px 50px
 }
 
 h1, h2, h3, h4{
@@ -371,17 +371,28 @@ button, .button {
 }
 
 footer {
-  padding-block: 10px;
-  display: flex; justify-content: space-around; flex-wrap: wrap;
-  grid-template-columns: repeat(var(--nav-items), var(--nav-item-width));
+  display: flex;
+  justify-content: center;
+  padding: 10px 40px;
   background-color     : black;
   border-top           : 10px solid #333333;
 }
+
+.footer-content {
+  display: flex; 
+  align-items: center;
+  justify-content: space-between; 
+  flex-wrap: wrap;
+  grid-template-columns: repeat(var(--nav-items), var(--nav-item-width));
+  width: 100%;
+  max-width: 1000px;
+}
+
 footer a {
   display         : inline-block;
   text-decoration : none;
   font-family     : Beleren;
-  color           : grey;
+  color           : var(--col-ui-artifact);
   text-align      : center;
   border          : none; 
   background-color: transparent !important;
@@ -392,19 +403,11 @@ footer a {
     transition: 0.3s;
   }
 } 
-footer a.nav-home {
-  display        : flex;
-  align-items    : center;
-  justify-content: center;
-  color          : white;
-  opacity        : 0.5;
-  transition     : opacity 0.2s;
-  &:hover { opacity: 1; }
-  & svg { width: 1.8em; height: 1.8em; }
-}
-footer a>img {
+
+footer .discord-img {
   flex-basis: 100%;
   max-width : 100px;
+  width: 100%;
 }
 
 ::-webkit-scrollbar             { background:black;                 width: 10px;         }
@@ -416,7 +419,7 @@ h1, section {
   background-image: linear-gradient(var(--col-dark-1-transparent), var(--col-dark-2-transparent));
   border          : 5px solid var(--col-darker);
   box-shadow      : 0px 0px 1px 2px inset var(--col-dark-1), 0px 2px 8px 2px var(--col-dark-1);
-  width: calc(100% - 40px);
+  width: 100%;
   max-width: 1000px;
 }
 

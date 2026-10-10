@@ -7,7 +7,9 @@ export function makeNav(){
   const footer      = document.querySelector("footer");
   const nav         = document.createElement("nav");
   const MOBILE_WIDTH = 1000;
+
   let isMobile = false;
+
   const resizeObserver = new ResizeObserver(entries => {
     for (let entry of entries) {
       const width = entry.contentRect.width;
@@ -22,6 +24,9 @@ export function makeNav(){
   header.appendChild(nav);
   resizeObserver.observe(document.body);
 
+  const foooterContent = document.createElement("div");
+  foooterContent.classList.add("footer-content");
+  footer.appendChild(foooterContent);
 
 
   pages.forEach((pageName, index)=>{
@@ -30,7 +35,7 @@ export function makeNav(){
     a.innerText    = pageName;
     a.href         = `${fileName}.html`;
     nav.appendChild(a);
-    footer.appendChild(a.cloneNode(true));
+    foooterContent.appendChild(a.cloneNode(true));
     a.classList.add(`ui-${colors[index]}`);
   });
 
@@ -40,13 +45,13 @@ export function makeNav(){
   const aTag       = document.createElement("a");
   aTag.href        = discordLink;
   aTag.target      = "_blank";
-  discordImg.classList.add("card");
+  discordImg.classList.add("discord-img");
   aTag.appendChild(discordImg);
-  footer.appendChild(aTag);
+  foooterContent.appendChild(aTag);
 
   function switchToDesktopNav() {
     if (!isMobile) { return };
-    
+
     isMobile = false;
     const mobileNavButton = document.getElementById("mobile-nav-button");
     mobileNavButton?.remove();
