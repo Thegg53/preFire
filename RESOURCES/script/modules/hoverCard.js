@@ -1,5 +1,5 @@
 import { getSmallCardSRC } from "./utils.js"
-import { addPreviewToElementFromCardName  } from "./card3d.js"
+import { addPreviewToElementFromCardName } from "./drawCards.js"
 
 const hoverCard = document.createElement("img");
 hoverCard.style.position      = "fixed";
