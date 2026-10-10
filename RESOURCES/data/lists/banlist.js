@@ -1,28 +1,35 @@
 export const banlist = [
-      "Ancient Den",
-      "Great Furnace",
-      "Tree of Tales",
-      "Vault of Whispers",
-      "Seat of the Synod",
-      "Blazing Shoal",
-      "Chrome Mox",
-      "Cloudpost",
-      "Creeping Chill",
-      "Counterbalance",
-      "Deathrite Shaman",
-      "Dig Through Time",
-      "Eye of Ugin",
+      "Second Sunrise",
+      // ------
       "Gitaxian Probe",
-      "Golgari Grave-Troll",
-      "Hypergenesis",
-      "Krark-Clan Ironworks",
       "Mental Misstep",
       "Ponder",
-      "Rite of Flame",
-      "Second Sunrise",
-      "Summer Bloom",
-      "Skullclamp",
+      "Counterbalance",
       "Treasure Cruise",
-      "Umezawa's Jitte"
+      "Dig Through Time",
+      // ------
+      "Creeping Chill",
+      // -------
+      "Rite of Flame",
+      "Blazing Shoal",
+      // -----
+      "Hypergenesis",
+      "Summer Bloom",
+      "Golgari Grave-Troll",
+      // -----
+      "Deathrite Shaman",
+      // -----
+      "Chrome Mox",
+      "Skullclamp",
+      "Umezawa's Jitte",
+      "Krark-Clan Ironworks",
+      // -----
+      "Ancient Den",
+      "Seat of the Synod",
+      "Vault of Whispers",
+      "Great Furnace",
+      "Tree of Tales",
+      "Cloudpost",
+      "Eye of Ugin",
 ];
 
