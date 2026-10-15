@@ -1,6 +1,8 @@
 import { getJSON } from "./modules/getJSON.js";
 import { banlist } from "../data/lists/banlist.js";
 
+const bannedCards = new Set(banlist.map(cardName => cardName.toLowerCase()));
+
 getJSON("lists/cards").then(cardData => setUpValidator(cardData));
 
 const validatorElement = document.getElementById("validator");
@@ -41,16 +43,16 @@ function validate(cardData, decklistText) {
       totalMaindeckCards += count;
     }
 
-    // Normalize card name: convert "/" to " // " for split cards
-    const normalizedCardName = cardName.replace(/\s*\/\/?\s*/g, ' // ');
+    // Normalize card name: lowercase and convert "/" to " // " for split cards
+    const normalizedCardName = cardName.toLowerCase().replace(/\s*\/\/?\s*/g, ' // ');
 
     // Check if card is in legal cards list
-    if (!legalCards.includes(cardName) && !legalCards.includes(normalizedCardName)) {
+    if (!legalCards.includes(normalizedCardName)) {
       issues.push(`Line ${index + 1}: "${cardName}" is not a legal PreFIRE card`);
     }
 
     // Check if card is banned
-    if (banlist.includes(cardName) || banlist.includes(normalizedCardName)) {
+    if (bannedCards.has(normalizedCardName)) {
       issues.push(`Line ${index + 1}: "${cardName}" is BANNED in PreFIRE`);
     }
 
@@ -99,7 +101,6 @@ function setUpValidator(cardData){
     checkDeckButton.addEventListener("click", processDecklist);
   }
 }
-
 
 
 
