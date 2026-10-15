@@ -28,15 +28,15 @@ def fetch_card_from_scryfall(card_name, set_code=None):
     """
     Fetch card data from Scryfall.
     If set_code is provided, fetch that specific printing.
-    Otherwise, fetch the oldest printing from 8ED to RNA (paper, core/expansion sets or TSB).
+    Otherwise, fetch the oldest printing from 8ED to RNA (paper, core/expansion sets only).
     """
     if set_code:
         # Fetch specific set
         query = f'!"{card_name}" set:{set_code}'
         url = f"https://api.scryfall.com/cards/search?q={urllib.parse.quote(query)}&unique=prints"
     else:
-        # Fetch oldest printing: 8ED through RNA, paper only, core/expansion sets or TSB
-        query = f'!"{card_name}" date>=8ed date<=rna game:paper (st:core or st:expansion or set:tsb)'
+        # Fetch oldest printing: 8ED through RNA, paper only, core or expansion sets
+        query = f'!"{card_name}" date>=8ed date<=rna game:paper (st:core or st:expansion)'
         url = f"https://api.scryfall.com/cards/search?q={urllib.parse.quote(query)}&order=released&dir=asc&unique=prints"
     
     print(f"  Fetching from Scryfall: {url}")

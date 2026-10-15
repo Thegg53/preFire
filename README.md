@@ -75,7 +75,7 @@ Use `fetch_card_image.py` to download card images from Scryfall and save them as
 ```bash
 cd SCRIPTS
 source .venv/bin/activate
-python3 fetch_card_image.py "Card Name"              # Oldest printing (8ED-RNA, paper, core/expansion or TSB)
+python3 fetch_card_image.py "Card Name"              # Oldest printing (8ED-RNA, paper, core/expansion)
 python3 fetch_card_image.py "Card Name" --set MRD    # Specific set (Mirrodin)
 python3 fetch_card_image.py "Card Name" --set "10E"  # 10th Edition
 ```
